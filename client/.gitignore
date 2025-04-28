@@ -1,0 +1,5 @@
+/landlord/.env
+/landlord/logs
+/renter/.env
+/renter/logs
+/logs
