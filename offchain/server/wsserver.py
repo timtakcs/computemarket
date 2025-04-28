@@ -55,7 +55,7 @@ async def handle(websocket):
             logger.info(f"forwarded from {sender_pk} to {recipient_pk}")
 
 async def main():
-    async with websockets.serve(handle, "localhost", 8765):
+    async with websockets.serve(handle, "0.0.0.0", 8765):
         await asyncio.Future()  
 
 asyncio.run(main())

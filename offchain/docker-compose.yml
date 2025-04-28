@@ -1,0 +1,21 @@
+services:
+  server:
+    build:
+      context: . # build from offchain/
+      dockerfile: server/Dockerfile
+    ports:
+      - "8000:8000"
+      - "8765:8765"
+
+  landlord:
+    build:
+      context: . # same context → common/ is visible
+      dockerfile: client/Dockerfile
+    environment:
+      - PUBLIC_KEY=0x939d31bD382a5B0D536ff45E7d086321738867a2
+      - PRIVATE_KEY=5af990b93cd5a5985cef57dc599eff96257b16751f0256a1ce8669d1277fa30e
+      - SERVER_URI=ws://server:8765
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    depends_on:
+      - server

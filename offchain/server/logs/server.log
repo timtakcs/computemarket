@@ -1,0 +1,15 @@
+2025-04-28 15:29:04,689 [INFO] websockets.server: server listening on [::1]:8765
+2025-04-28 15:29:04,689 [INFO] websockets.server: server listening on 127.0.0.1:8765
+2025-04-28 15:29:05,602 [INFO] websockets.server: server closing
+2025-04-28 15:29:05,603 [INFO] websockets.server: server closed
+2025-04-28 22:05:42,492 [INFO] websockets.server: server listening on 0.0.0.0:8765
+2025-04-28 22:09:37,222 [INFO] websockets.server: server listening on 0.0.0.0:8765
+2025-04-28 22:09:37,497 [INFO] websockets.server: connection open
+2025-04-28 22:09:37,497 [INFO] server: identified 0x939d31bD382a5B0D536ff45E7d086321738867a2 with <websockets.asyncio.server.ServerConnection object at 0xffff84747010>
+2025-04-28 22:09:37,502 [ERROR] websockets.server: connection handler failed
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/websockets/asyncio/server.py", line 376, in conn_handler
+    await self.handler(connection)
+  File "/app/server/wsserver.py", line 53, in handle
+    recipient_ws = pk_resolve[recipient_pk]
+KeyError: '0xada6710E3951ee357825baBB84cE06300B13c073'
