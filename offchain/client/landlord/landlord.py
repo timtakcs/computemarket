@@ -2,10 +2,13 @@ import asyncio
 import sys
 from pathlib import Path
 import contextlib
-sys.path.append(str(Path(__file__).resolve().parent.parent.parent))
+import docker
+import tempfile
+import os
 
+sys.path.append(str(Path(__file__).resolve().parent.parent.parent))
 from common.client import Client
-from common.constants import SIGN, LANDLORDSIG, PAYLOAD, ACTION, STARTRENTAL, STOPRENTAL, CONNECT
+from common.constants import SIGN, LANDLORDSIG, PAYLOAD, ACTION, STARTRENTAL, STOPRENTAL 
 
 class LandlordClient(Client):
     def __init__(self):
@@ -15,11 +18,61 @@ class LandlordClient(Client):
         self.invoice_task = None
         self.INVOICE_INTERVAL = 5
 
+        self.container = None
+        self.container_port = 22  
+        self.host_port = 45180
+        self.docker_client = docker.DockerClient(base_url='unix://var/run/docker.sock')
+
     async def start_container(self):
-        self.logger.info("starting container")
+        self.logger.info("starting container...")
+
+        try:
+            ssh_image = "rastasheep/ubuntu-sshd:18.04"
+            self.docker_client.images.pull(ssh_image)
+
+            pub_key = "temporary field" # will inject actual ssh key later
+
+            key_dir = tempfile.mkdtemp()
+            auth_key_path = os.path.join(key_dir, "authorized_keys")
+
+            with open(auth_key_path, "w") as f:
+                f.write(pub_key)
+
+            os.chmod(auth_key_path, 0o600)
+            os.chmod(key_dir, 0o700)
+
+            self.container = self.docker_client.containers.run(
+                ssh_image,
+                detach=True,
+                ports={f"{self.container_port}/tcp": self.host_port},
+                volumes={
+                    key_dir: {
+                        "bind": "/root/.ssh",
+                        "mode": "rw"
+                    }
+                },
+                tty=True
+            )
+
+            self.container.exec_run(["chown", "-R", "root:root", "/root/.ssh"])
+
+            self.container.exec_run("bash -c 'echo root:docker123 | chpasswd'")
+            self.container.exec_run("sed -i 's/^#*PasswordAuthentication.*/PasswordAuthentication yes/' /etc/ssh/sshd_config")
+
+            self.logger.info(f"container started on host port {self.host_port}")
+
+        except Exception as e:
+            self.logger.error(f"❌ Failed to start container: {e}")
     
     async def stop_container(self):
-        self.logger.info("stopping container")
+        self.logger.info("stopping container...")
+        if self.container:
+            try:
+                self.container.stop()
+                self.container.remove()
+                self.logger.info("container stopped and removed.")
+            except Exception as e:
+                self.logger.warning(f"Failed to stop/remove container: {e}")
 
     async def invoice_loop(self):
         try:
@@ -39,7 +92,7 @@ class LandlordClient(Client):
                 self.logger.info("sent invoice to renter...")
 
                 self.nonce += 1
-                await asyncio.sleep(5)
+                await asyncio.sleep(20)
         except asyncio.CancelledError:
             self.logger.info("send invoices cancelled...")
             raise

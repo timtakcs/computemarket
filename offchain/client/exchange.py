@@ -19,8 +19,8 @@ def main():
 
     if args.landlord:
         client = LandlordClient()
-        client.public_key = "0x939d31bD382a5B0D536ff45E7d086321738867a2"
-        client.private_key = "5af990b93cd5a5985cef57dc599eff96257b16751f0256a1ce8669d1277fa30e"
+        # client.public_key = "0x939d31bD382a5B0D536ff45E7d086321738867a2"
+        # client.private_key = "5af990b93cd5a5985cef57dc599eff96257b16751f0256a1ce8669d1277fa30e"
     elif args.renter:
         if not args.landlord_id:
             raise ValueError("You must specify --landlord-id when using -r")
