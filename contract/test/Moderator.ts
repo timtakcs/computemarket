@@ -85,7 +85,6 @@ describe("Moderator", function () {
     it("should accept a valid invoice and emit an event", async () => {
         const { contract } = await deployFixture();
 
-        // matches off-chain signed data
         const channelId = ethers.zeroPadValue(ethers.toBeHex(1), 32);
         const nonce = 1;
 
@@ -109,9 +108,58 @@ describe("Moderator", function () {
         expect(stored.invoice.sigR).to.equal(sigR);
         expect(stored.expirationBlock).to.be.gt(0);
 
-        // assert InvoiceSubmitted event
         await expect(tx)
             .to.emit(contract, "InvoiceSubmitted")
             .withArgs(channelId, nonce, stored.expirationBlock);
+    });
+
+    it("should reflect correct renter balance after deposit", async () => {
+        const { contract, renter } = await deployFixture();
+
+        const depositAmount = 10n;
+        await contract.connect(renter).deposit({ value: depositAmount });
+
+        const balance = await contract.getBalance(renter.address);
+        expect(balance).to.equal(depositAmount);
+    });
+
+    it("should close the channel and transfer funds correctly", async () => {
+        const [renter, landlord] = await ethers.getSigners();
+        const Moderator = await ethers.getContractFactory("Moderator");
+        const contract = await Moderator.deploy();
+        await contract.waitForDeployment();
+
+        const channelId = ethers.zeroPadValue(ethers.toBeHex(1), 32);
+        const nonce = 1;
+
+        const sigL =
+            "0x3487e0575ce0c0a7e0394fa5b057fd445289b6da1d866f8ca3145db463ead2c32ff339451c3cdf6aa31e874bc48876f65c2aff8a2c8bd0a6deaa3296ee8e187a1c";
+        const sigR =
+            "0x83848e5ff4b697d36bc8157f77b4655353b1c09ad98111a8ee68fd013a05f2b74207611b295fc68bb3fc64a403f571307a52888c782fa01a6acf2a105ff02f181b";
+
+        const renterAddr = "0xada6710E3951ee357825baBB84cE06300B13c073";
+        const landlordAddr = "0x939d31bD382a5B0D536ff45E7d086321738867a2";
+
+        await contract.depositTo(renterAddr, { value: 10n }); // use overloaded deposit
+
+        await contract.setChannelForTest(channelId, renterAddr, landlordAddr);
+        await contract.submitInvoice(channelId, nonce, sigL, sigR);
+
+        for (let i = 0; i < 3; i++) {
+            await ethers.provider.send("evm_mine", []);
+        }
+
+        const tx = await contract.closeChannel(channelId);
+        const receipt = await tx.wait();
+
+        expect(await contract.getBalance(renterAddr)).to.equal(9n);
+        expect(await contract.getBalance(landlordAddr)).to.equal(1n);
+
+        const stored = await contract.channels(channelId);
+        expect(stored.open).to.equal(false);
+
+        await expect(tx)
+            .to.emit(contract, "ChannelClosed")
+            .withArgs(channelId, renterAddr, landlordAddr);
     });
 });
