@@ -86,7 +86,7 @@ class LandlordClient(Client):
                 }
 
                 sigL = self.sign(invoice[PAYLOAD])
-                invoice[LANDLORDSIG] = sigL
+                invoice[PAYLOAD][LANDLORDSIG] = sigL
 
                 await self.send_message(invoice)
                 self.logger.info("sent invoice to renter...")

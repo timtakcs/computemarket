@@ -7,9 +7,10 @@ class ChannelSigner:
         self.account = Account.from_key(private_key)
 
     def hash(self, channel_id: int, nonce: int) -> bytes:
+        chan_b32 = channel_id.to_bytes(32, "big")   # 32‑byte big‑endian
         return Web3.solidity_keccak(
-            ["uint256", "uint32"],
-            [channel_id, nonce]
+            ["bytes32", "uint32"],
+            [chan_b32, nonce]
         )
 
     def sign(self, channel_id: int, nonce: int) -> str:

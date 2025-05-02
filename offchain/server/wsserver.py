@@ -14,9 +14,6 @@ ws_resolve = {} # ws -> pk
 
 logger = get_logger("server")
 
-# pairing['0xada6710E3951ee357825baBB84cE06300B13c073'] = '0x939d31bD382a5B0D536ff45E7d086321738867a2'
-# pairing['0x939d31bD382a5B0D536ff45E7d086321738867a2'] = '0xada6710E3951ee357825baBB84cE06300B13c073'
-
 async def echo(websocket):
     async for message in websocket:
         await websocket.send(message)

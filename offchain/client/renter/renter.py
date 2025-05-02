@@ -41,6 +41,7 @@ class RenterClient(Client):
             json_message = self.deserialize(message)
             new_invoice = json_message[PAYLOAD]
             sigR = self.sign(new_invoice)
+
             new_invoice[RENTERSIG] = sigR
             self.invoices.append(new_invoice)
             

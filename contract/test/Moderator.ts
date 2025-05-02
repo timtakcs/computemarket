@@ -4,66 +4,114 @@ import { time } from "@nomicfoundation/hardhat-network-helpers";
 
 describe("Moderator", function () {
     async function deployFixture() {
-        const [renter, landlord] = await ethers.getSigners();
-
-        const Moderator = await ethers.getContractFactory("moderator");
+        const [renter, landlord, otherLandlord] = await ethers.getSigners();
+        const Moderator = await ethers.getContractFactory("Moderator");
         const contract = await Moderator.deploy();
         await contract.waitForDeployment();
-
-        return { contract, renter, landlord };
+        return { contract, renter, landlord, otherLandlord };
     }
-});
 
-describe("Moderator", function () {
     it("should reject channel where renter and landlord are the same", async () => {
-        const [renter] = await ethers.getSigners(); // only use one signer
-        const Moderator = await ethers.getContractFactory("Moderator");
-        const moderator = await Moderator.deploy();
-        await moderator.waitForDeployment();
+        const { contract, renter } = await deployFixture();
 
         await expect(
-            moderator.connect(renter).openChannel(renter.address, renter.address)
+            contract.connect(renter).openChannel(renter.address, renter.address)
         ).to.be.revertedWith("renter and landlord can't be the same.");
     });
-});
 
-describe("Moderator", function () {
     it("should open a channel successfully and compute the correct channelId", async () => {
-        const [renter, landlord] = await ethers.getSigners();
-        const Moderator = await ethers.getContractFactory("Moderator");
-        const moderator = await Moderator.deploy();
-        await moderator.waitForDeployment();
+        const { contract, renter, landlord } = await deployFixture();
 
-        await time.increase(1); // advance by 1 second to match block.timestamp
+        await time.increase(1);
 
-        const tx = await moderator.connect(renter).openChannel(renter.address, landlord.address);
+        const tx = await contract.connect(renter).openChannel(renter.address, landlord.address);
         const receipt = await tx.wait();
 
         if (!receipt || !receipt.blockNumber) {
             throw new Error("Transaction receipt or block number is missing.");
         }
 
-        const block = await ethers.provider.getBlock(receipt.blockNumber);
-        if (!block) {
-            throw new Error("Block not found.");
-        }
-
-        const actualTimestamp = block.timestamp;
+        const block = await ethers.provider.getBlock(receipt.blockNumber!);
+        const timestamp = block!.timestamp;
 
         const expectedChannelId = ethers.solidityPackedKeccak256(
             ["address", "address", "uint256"],
-            [renter.address, landlord.address, actualTimestamp]
+            [renter.address, landlord.address, timestamp]
         );
 
         await expect(tx)
-            .to.emit(moderator, "ChannelOpened")
+            .to.emit(contract, "ChannelOpened")
             .withArgs(expectedChannelId, renter.address, landlord.address);
 
-        const channel = await moderator.channels(expectedChannelId);
-
+        const channel = await contract.channels(expectedChannelId);
         expect(channel.renter).to.equal(renter.address);
         expect(channel.landlord).to.equal(landlord.address);
-        expect(channel.open).to.equal(true);
-        expect(channel.timestamp).to.equal(actualTimestamp);
+        expect(channel.open).to.be.true;
+        expect(channel.timestamp).to.equal(timestamp);
+    });
+
+    it("should reject opening a second channel for the same renter or landlord", async () => {
+        const { contract, renter, landlord, otherLandlord } = await deployFixture();
+
+        await contract.openChannel(renter.address, landlord.address);
+
+        await expect(
+            contract.openChannel(renter.address, otherLandlord.address)
+        ).to.be.revertedWith("renter already has an active channel.");
+
+        await expect(
+            contract.openChannel(otherLandlord.address, landlord.address)
+        ).to.be.revertedWith("landlord already has an active channel.");
+    });
+
+    it("should verify a valid signature from both renter and landlord", async () => {
+        const { contract } = await deployFixture();
+
+        const channelId = ethers.zeroPadValue(ethers.toBeHex(1), 32); // channel_id = 1 as bytes32
+        const nonce = 1;
+
+        const sigL = "0x3487e0575ce0c0a7e0394fa5b057fd445289b6da1d866f8ca3145db463ead2c32ff339451c3cdf6aa31e874bc48876f65c2aff8a2c8bd0a6deaa3296ee8e187a1c";
+        const sigR = "0x83848e5ff4b697d36bc8157f77b4655353b1c09ad98111a8ee68fd013a05f2b74207611b295fc68bb3fc64a403f571307a52888c782fa01a6acf2a105ff02f181b";
+
+        const renterAddress = "0xada6710E3951ee357825baBB84cE06300B13c073";
+
+        const validRenterSig = await contract.verify(channelId, nonce, sigR, renterAddress);
+        const invalidLandlordSig = await contract.verify(channelId, nonce, sigL, renterAddress);
+
+        expect(validRenterSig).to.be.true;
+        expect(invalidLandlordSig).to.be.false;
+    });
+
+    it("should accept a valid invoice and emit an event", async () => {
+        const { contract } = await deployFixture();
+
+        // matches off-chain signed data
+        const channelId = ethers.zeroPadValue(ethers.toBeHex(1), 32);
+        const nonce = 1;
+
+        const sigL =
+            "0x3487e0575ce0c0a7e0394fa5b057fd445289b6da1d866f8ca3145db463ead2c32ff339451c3cdf6aa31e874bc48876f65c2aff8a2c8bd0a6deaa3296ee8e187a1c";
+        const sigR =
+            "0x83848e5ff4b697d36bc8157f77b4655353b1c09ad98111a8ee68fd013a05f2b74207611b295fc68bb3fc64a403f571307a52888c782fa01a6acf2a105ff02f181b";
+
+        const renterAddr = "0xada6710E3951ee357825baBB84cE06300B13c073";
+        const landlordAddr = "0x939d31bD382a5B0D536ff45E7d086321738867a2";
+
+        // set up mock channel
+        await contract.setChannelForTest(channelId, renterAddr, landlordAddr); // helper required in contract
+
+        const tx = await contract.submitInvoice(channelId, nonce, sigL, sigR);
+        const receipt = await tx.wait();
+
+        const stored = await contract.channels(channelId);
+        expect(stored.invoice.nonce).to.equal(nonce);
+        expect(stored.invoice.sigL).to.equal(sigL);
+        expect(stored.invoice.sigR).to.equal(sigR);
+        expect(stored.expirationBlock).to.be.gt(0);
+
+        // assert InvoiceSubmitted event
+        await expect(tx)
+            .to.emit(contract, "InvoiceSubmitted")
+            .withArgs(channelId, nonce, stored.expirationBlock);
     });
 });

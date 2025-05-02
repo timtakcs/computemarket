@@ -1,0 +1,6 @@
+{
+    "includePath": "node_modules",
+    "remappings": [
+        "@openzeppelin/=node_modules/@openzeppelin/"
+    ]
+}
