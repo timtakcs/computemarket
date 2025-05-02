@@ -8,7 +8,7 @@ import os
 
 sys.path.append(str(Path(__file__).resolve().parent.parent.parent))
 from common.client import Client
-from common.constants import SIGN, LANDLORDSIG, PAYLOAD, ACTION, STARTRENTAL, STOPRENTAL 
+from common.constants import *
 
 class LandlordClient(Client):
     def __init__(self):
@@ -81,7 +81,7 @@ class LandlordClient(Client):
                     "action": SIGN,
                     "payload": {
                         "nonce": self.nonce,
-                        "channel_id": 1
+                        "channel_id": self.channel
                     }
                 }
 
@@ -96,6 +96,26 @@ class LandlordClient(Client):
         except asyncio.CancelledError:
             self.logger.info("send invoices cancelled...")
             raise
+    
+    async def stop(self):
+        self.logger.info("shutdown initiated for landlord client...")
+
+        if self.invoice_task:
+            self.invoice_task.cancel()
+            with contextlib.suppress(asyncio.CancelledError):
+                await self.invoice_task
+
+        if self.active.is_set():
+            self.active.clear()
+
+        await self.stop_container()
+
+        if self.websocket:
+            stop_msg = {"action": STOPRENTAL}
+            await self.send_message(stop_msg)
+            await self.websocket.close()
+
+        self.logger.info("landlord client shutdown complete!")
 
     async def run(self):
         self.logger.info(f"active is set: {self.active.is_set()}")
@@ -105,11 +125,13 @@ class LandlordClient(Client):
 
             if action == STARTRENTAL and not self.active.is_set():
                 self.logger.info("starting rental...")
+                self.channel = int(message[CHANNELID], 16)
                 await self.start_container()
                 self.active.set()
                 self.invoice_task = asyncio.create_task(self.invoice_loop())
             elif action == STOPRENTAL and self.active.is_set():
                 self.logger.info("stopping rental...")
+                self.channel = None
                 self.active.clear()
                 if self.invoice_task:
                     self.invoice_task.cancel()

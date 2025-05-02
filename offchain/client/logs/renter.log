@@ -1,0 +1,321 @@
+2025-05-02 17:30:30,454 [INFO] renter: what the fuck
+2025-05-02 17:30:45,706 [INFO] renter: what the fuckNone
+2025-05-02 17:31:11,883 [INFO] renter: what the fuck0x70997970C51812dc3A010C7d01b50e0d17dc79C8
+2025-05-02 17:31:11,890 [INFO] renter: sent open request to 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+2025-05-02 17:42:17,300 [INFO] renter: what the fuck0x70997970C51812dc3A010C7d01b50e0d17dc79C8
+2025-05-02 17:42:17,306 [INFO] renter: sent open request to 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+2025-05-02 17:42:19,868 [INFO] renter: received invoice: {'nonce': 0, 'channel_id': 1, 'sigL': '9f64393a5e81e71aeaaf94ba377396d9beddc166fc35b0c32b2828d57872edc1554dc231451af2b1bbba4092d4ffda6ff9631580d2eea3ab8af8c80cf5ab4f561c', 'sigR': '9f64393a5e81e71aeaaf94ba377396d9beddc166fc35b0c32b2828d57872edc1554dc231451af2b1bbba4092d4ffda6ff9631580d2eea3ab8af8c80cf5ab4f561c'}
+2025-05-02 17:42:39,875 [INFO] renter: received invoice: {'nonce': 1, 'channel_id': 1, 'sigL': '3cdb8fc5e4a69fc69c91a32cb6b5d0cb2454acd7a52de15ab047e2f0098c5b9268f2c985e10fa16625f87694d7330af43cb5a0ee3c05c0c4db29f87d976e7ab21c', 'sigR': '3cdb8fc5e4a69fc69c91a32cb6b5d0cb2454acd7a52de15ab047e2f0098c5b9268f2c985e10fa16625f87694d7330af43cb5a0ee3c05c0c4db29f87d976e7ab21c'}
+2025-05-02 17:42:55,519 [INFO] renter: received kill signal, stopping rental...
+2025-05-02 17:43:53,825 [INFO] renter: what the fuck0x70997970C51812dc3A010C7d01b50e0d17dc79C8
+2025-05-02 17:43:53,832 [INFO] renter: sent open request to 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+2025-05-02 17:43:59,488 [INFO] renter: received kill signal, stopping rental...
+2025-05-02 17:44:24,012 [INFO] renter: what the fuck0x70997970C51812dc3A010C7d01b50e0d17dc79C8
+2025-05-02 17:44:24,019 [INFO] renter: sent open request to 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+2025-05-02 17:44:28,104 [INFO] renter: received kill signal, stopping rental...
+2025-05-02 17:44:29,457 [INFO] renter: what the fuck0x70997970C51812dc3A010C7d01b50e0d17dc79C8
+2025-05-02 17:44:29,463 [INFO] renter: sent open request to 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+2025-05-02 17:44:34,890 [INFO] renter: received kill signal, stopping rental...
+2025-05-02 17:46:46,907 [INFO] renter: what the fuck0x70997970C51812dc3A010C7d01b50e0d17dc79C8
+2025-05-02 17:46:46,913 [INFO] renter: sent open request to 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+2025-05-02 17:46:50,336 [INFO] renter: received kill signal, stopping rental...
+2025-05-02 17:49:49,889 [INFO] renter: what the fuck0x70997970C51812dc3A010C7d01b50e0d17dc79C8
+2025-05-02 17:49:49,896 [INFO] renter: sent open request to 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+2025-05-02 17:49:55,997 [INFO] renter: received kill signal, stopping rental...
+2025-05-02 17:52:20,533 [INFO] renter: what the fuck0x70997970C51812dc3A010C7d01b50e0d17dc79C8
+2025-05-02 17:52:20,540 [INFO] renter: sent open request to 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+2025-05-02 17:52:27,705 [ERROR] asyncio: Task exception was never retrieved
+future: <Task finished name='Task-5' coro=<main.<locals>.runner.<locals>.shutdown() done, defined at /Users/timurtakhtarov/School/CSCE489/computemarket/offchain/client/exchange.py:37> exception=ConnectionClosedOK(Close(code=1001, reason=''), Close(code=1001, reason=''), True)>
+Traceback (most recent call last):
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/client/exchange.py", line 40, in shutdown
+    await client.stop()
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/client/renter/renter.py", line 55, in stop
+    await self.send_stop_rental()
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/client/renter/renter.py", line 31, in send_stop_rental
+    await self.send_message(msg)
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/common/client.py", line 58, in send_message
+    await self.websocket.send(json.dumps(message))
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/websockets/legacy/protocol.py", line 620, in send
+    await self.ensure_open()
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/websockets/legacy/protocol.py", line 921, in ensure_open
+    raise self.connection_closed_exc()
+websockets.exceptions.ConnectionClosedOK: received 1001 (going away); then sent 1001 (going away)
+2025-05-02 17:52:41,232 [INFO] renter: what the fuck0x70997970C51812dc3A010C7d01b50e0d17dc79C8
+2025-05-02 17:52:41,239 [INFO] renter: sent open request to 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+2025-05-02 17:52:50,900 [ERROR] asyncio: Task exception was never retrieved
+future: <Task finished name='Task-5' coro=<main.<locals>.runner.<locals>.shutdown() done, defined at /Users/timurtakhtarov/School/CSCE489/computemarket/offchain/client/exchange.py:37> exception=ConnectionClosedOK(Close(code=1001, reason=''), Close(code=1001, reason=''), True)>
+Traceback (most recent call last):
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/client/exchange.py", line 40, in shutdown
+    await client.stop()
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/client/renter/renter.py", line 55, in stop
+    await self.send_stop_rental()
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/client/renter/renter.py", line 31, in send_stop_rental
+    await self.send_message(msg)
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/common/client.py", line 58, in send_message
+    await self.websocket.send(json.dumps(message))
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/websockets/legacy/protocol.py", line 620, in send
+    await self.ensure_open()
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/websockets/legacy/protocol.py", line 921, in ensure_open
+    raise self.connection_closed_exc()
+websockets.exceptions.ConnectionClosedOK: received 1001 (going away); then sent 1001 (going away)
+2025-05-02 17:55:09,824 [INFO] renter: what the fuck0x70997970C51812dc3A010C7d01b50e0d17dc79C8
+2025-05-02 17:55:09,831 [INFO] renter: sent open request to 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+2025-05-02 17:55:42,967 [ERROR] asyncio: Task exception was never retrieved
+future: <Task finished name='Task-5' coro=<main.<locals>.runner.<locals>.shutdown() done, defined at /Users/timurtakhtarov/School/CSCE489/computemarket/offchain/client/exchange.py:37> exception=ConnectionClosedOK(Close(code=1001, reason=''), Close(code=1001, reason=''), True)>
+Traceback (most recent call last):
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/client/exchange.py", line 40, in shutdown
+    await client.stop()
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/client/renter/renter.py", line 55, in stop
+    await self.send_stop_rental()
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/client/renter/renter.py", line 31, in send_stop_rental
+    await self.send_message(msg)
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/common/client.py", line 58, in send_message
+    await self.websocket.send(json.dumps(message))
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/websockets/legacy/protocol.py", line 620, in send
+    await self.ensure_open()
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/websockets/legacy/protocol.py", line 921, in ensure_open
+    raise self.connection_closed_exc()
+websockets.exceptions.ConnectionClosedOK: received 1001 (going away); then sent 1001 (going away)
+2025-05-02 17:55:47,307 [INFO] renter: what the fuck0x70997970C51812dc3A010C7d01b50e0d17dc79C8
+2025-05-02 17:55:47,313 [INFO] renter: sent open request to 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+2025-05-02 17:56:54,360 [ERROR] asyncio: Task exception was never retrieved
+future: <Task finished name='Task-5' coro=<main.<locals>.runner.<locals>.shutdown() done, defined at /Users/timurtakhtarov/School/CSCE489/computemarket/offchain/client/exchange.py:37> exception=ConnectionClosedOK(Close(code=1000, reason=''), Close(code=1000, reason=''), True)>
+Traceback (most recent call last):
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/client/exchange.py", line 40, in shutdown
+    await client.stop()
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/client/renter/renter.py", line 55, in stop
+    await self.send_stop_rental()
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/client/renter/renter.py", line 31, in send_stop_rental
+    await self.send_message(msg)
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/common/client.py", line 58, in send_message
+    await self.websocket.send(json.dumps(message))
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/websockets/legacy/protocol.py", line 620, in send
+    await self.ensure_open()
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/websockets/legacy/protocol.py", line 921, in ensure_open
+    raise self.connection_closed_exc()
+websockets.exceptions.ConnectionClosedOK: received 1000 (OK); then sent 1000 (OK)
+2025-05-02 17:57:01,047 [INFO] renter: what the fuck0x70997970C51812dc3A010C7d01b50e0d17dc79C8
+2025-05-02 17:57:01,053 [INFO] renter: sent open request to 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+2025-05-02 17:57:29,809 [ERROR] asyncio: Task exception was never retrieved
+future: <Task finished name='Task-5' coro=<main.<locals>.runner.<locals>.shutdown() done, defined at /Users/timurtakhtarov/School/CSCE489/computemarket/offchain/client/exchange.py:37> exception=ConnectionClosedOK(Close(code=1000, reason=''), Close(code=1000, reason=''), True)>
+Traceback (most recent call last):
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/client/exchange.py", line 40, in shutdown
+    await client.stop()
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/client/renter/renter.py", line 55, in stop
+    await self.send_stop_rental()
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/client/renter/renter.py", line 31, in send_stop_rental
+    await self.send_message(msg)
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/common/client.py", line 58, in send_message
+    await self.websocket.send(json.dumps(message))
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/websockets/legacy/protocol.py", line 620, in send
+    await self.ensure_open()
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/websockets/legacy/protocol.py", line 921, in ensure_open
+    raise self.connection_closed_exc()
+websockets.exceptions.ConnectionClosedOK: received 1000 (OK); then sent 1000 (OK)
+2025-05-02 17:57:42,612 [INFO] renter: what the fuck0x70997970C51812dc3A010C7d01b50e0d17dc79C8
+2025-05-02 17:57:42,618 [INFO] renter: sent open request to 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+2025-05-02 17:57:45,343 [INFO] renter: received kill signal, stopping rental...
+2025-05-02 17:59:09,484 [INFO] renter: what the fuck0x70997970C51812dc3A010C7d01b50e0d17dc79C8
+2025-05-02 17:59:09,490 [INFO] renter: sent open request to 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+2025-05-02 17:59:12,158 [INFO] renter: received kill signal, stopping rental...
+2025-05-02 18:00:14,702 [INFO] renter: what the fuck0x70997970C51812dc3A010C7d01b50e0d17dc79C8
+2025-05-02 18:00:14,708 [INFO] renter: sent open request to 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+2025-05-02 18:00:20,743 [ERROR] asyncio: Task exception was never retrieved
+future: <Task finished name='Task-5' coro=<main.<locals>.runner.<locals>.shutdown() done, defined at /Users/timurtakhtarov/School/CSCE489/computemarket/offchain/client/exchange.py:37> exception=ConnectionClosedOK(Close(code=1001, reason=''), Close(code=1001, reason=''), True)>
+Traceback (most recent call last):
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/client/exchange.py", line 40, in shutdown
+    await client.stop()
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/client/renter/renter.py", line 55, in stop
+    await self.send_stop_rental()
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/client/renter/renter.py", line 31, in send_stop_rental
+    await self.send_message(msg)
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/common/client.py", line 58, in send_message
+    await self.websocket.send(json.dumps(message))
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/websockets/legacy/protocol.py", line 620, in send
+    await self.ensure_open()
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/websockets/legacy/protocol.py", line 921, in ensure_open
+    raise self.connection_closed_exc()
+websockets.exceptions.ConnectionClosedOK: received 1001 (going away); then sent 1001 (going away)
+2025-05-02 18:01:02,627 [INFO] renter: what the fuck0x70997970C51812dc3A010C7d01b50e0d17dc79C8
+2025-05-02 18:01:02,633 [INFO] renter: sent open request to 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+2025-05-02 18:01:51,444 [ERROR] asyncio: Task exception was never retrieved
+future: <Task finished name='Task-6' coro=<main.<locals>.runner.<locals>.shutdown() done, defined at /Users/timurtakhtarov/School/CSCE489/computemarket/offchain/client/exchange.py:37> exception=ConnectionClosedError(None, None, None)>
+Traceback (most recent call last):
+  File "/opt/homebrew/Cellar/python@3.13/3.13.3/Frameworks/Python.framework/Versions/3.13/lib/python3.13/asyncio/runners.py", line 195, in run
+    return runner.run(main)
+           ~~~~~~~~~~^^^^^^
+  File "/opt/homebrew/Cellar/python@3.13/3.13.3/Frameworks/Python.framework/Versions/3.13/lib/python3.13/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/opt/homebrew/Cellar/python@3.13/3.13.3/Frameworks/Python.framework/Versions/3.13/lib/python3.13/asyncio/base_events.py", line 719, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/client/exchange.py", line 47, in runner
+    await client.start()
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/common/client.py", line 70, in start
+    await self.run()
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/client/renter/renter.py", line 42, in run
+    new_invoice = json_message[PAYLOAD]
+                  ~~~~~~~~~~~~^^^^^^^^^
+KeyError: 'payload'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/websockets/legacy/protocol.py", line 1279, in close_connection
+    await self.transfer_data_task
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/websockets/legacy/protocol.py", line 945, in transfer_data
+    message = await self.read_message()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/websockets/legacy/protocol.py", line 1015, in read_message
+    frame = await self.read_data_frame(max_size=self.max_size)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/websockets/legacy/protocol.py", line 1090, in read_data_frame
+    frame = await self.read_frame(max_size)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/websockets/legacy/protocol.py", line 1147, in read_frame
+    frame = await Frame.read(
+            ^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/websockets/legacy/framing.py", line 71, in read
+    data = await reader(2)
+           ^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.13/3.13.3/Frameworks/Python.framework/Versions/3.13/lib/python3.13/asyncio/streams.py", line 769, in readexactly
+    await self._wait_for_data('readexactly')
+  File "/opt/homebrew/Cellar/python@3.13/3.13.3/Frameworks/Python.framework/Versions/3.13/lib/python3.13/asyncio/streams.py", line 539, in _wait_for_data
+    await self._waiter
+asyncio.exceptions.CancelledError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/client/exchange.py", line 40, in shutdown
+    await client.stop()
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/client/renter/renter.py", line 55, in stop
+    await self.send_stop_rental()
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/client/renter/renter.py", line 31, in send_stop_rental
+    await self.send_message(msg)
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/common/client.py", line 58, in send_message
+    await self.websocket.send(json.dumps(message))
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/websockets/legacy/protocol.py", line 620, in send
+    await self.ensure_open()
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/websockets/legacy/protocol.py", line 916, in ensure_open
+    raise self.connection_closed_exc()
+websockets.exceptions.ConnectionClosedError: no close frame received or sent
+2025-05-02 18:01:59,271 [INFO] renter: what the fuck0x70997970C51812dc3A010C7d01b50e0d17dc79C8
+2025-05-02 18:01:59,276 [INFO] renter: sent open request to 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+2025-05-02 18:02:01,818 [INFO] renter: received invoice: {'nonce': 0, 'channel_id': 1, 'sigL': '9f64393a5e81e71aeaaf94ba377396d9beddc166fc35b0c32b2828d57872edc1554dc231451af2b1bbba4092d4ffda6ff9631580d2eea3ab8af8c80cf5ab4f561c', 'sigR': '9f64393a5e81e71aeaaf94ba377396d9beddc166fc35b0c32b2828d57872edc1554dc231451af2b1bbba4092d4ffda6ff9631580d2eea3ab8af8c80cf5ab4f561c'}
+2025-05-02 18:02:21,806 [INFO] renter: received invoice: {'nonce': 1, 'channel_id': 1, 'sigL': '3cdb8fc5e4a69fc69c91a32cb6b5d0cb2454acd7a52de15ab047e2f0098c5b9268f2c985e10fa16625f87694d7330af43cb5a0ee3c05c0c4db29f87d976e7ab21c', 'sigR': '3cdb8fc5e4a69fc69c91a32cb6b5d0cb2454acd7a52de15ab047e2f0098c5b9268f2c985e10fa16625f87694d7330af43cb5a0ee3c05c0c4db29f87d976e7ab21c'}
+2025-05-02 18:02:25,158 [INFO] renter: received kill signal, stopping rental...
+2025-05-02 18:02:29,746 [INFO] renter: what the fuck0x70997970C51812dc3A010C7d01b50e0d17dc79C8
+2025-05-02 18:02:29,753 [INFO] renter: sent open request to 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+2025-05-02 18:02:52,771 [ERROR] asyncio: Task exception was never retrieved
+future: <Task finished name='Task-6' coro=<main.<locals>.runner.<locals>.shutdown() done, defined at /Users/timurtakhtarov/School/CSCE489/computemarket/offchain/client/exchange.py:37> exception=ConnectionClosedError(None, None, None)>
+Traceback (most recent call last):
+  File "/opt/homebrew/Cellar/python@3.13/3.13.3/Frameworks/Python.framework/Versions/3.13/lib/python3.13/asyncio/runners.py", line 195, in run
+    return runner.run(main)
+           ~~~~~~~~~~^^^^^^
+  File "/opt/homebrew/Cellar/python@3.13/3.13.3/Frameworks/Python.framework/Versions/3.13/lib/python3.13/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/opt/homebrew/Cellar/python@3.13/3.13.3/Frameworks/Python.framework/Versions/3.13/lib/python3.13/asyncio/base_events.py", line 719, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/client/exchange.py", line 47, in runner
+    await client.start()
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/common/client.py", line 70, in start
+    await self.run()
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/client/renter/renter.py", line 42, in run
+    new_invoice = json_message[PAYLOAD]
+                  ~~~~~~~~~~~~^^^^^^^^^
+KeyError: 'payload'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/websockets/legacy/protocol.py", line 1279, in close_connection
+    await self.transfer_data_task
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/websockets/legacy/protocol.py", line 945, in transfer_data
+    message = await self.read_message()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/websockets/legacy/protocol.py", line 1015, in read_message
+    frame = await self.read_data_frame(max_size=self.max_size)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/websockets/legacy/protocol.py", line 1090, in read_data_frame
+    frame = await self.read_frame(max_size)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/websockets/legacy/protocol.py", line 1147, in read_frame
+    frame = await Frame.read(
+            ^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/websockets/legacy/framing.py", line 71, in read
+    data = await reader(2)
+           ^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.13/3.13.3/Frameworks/Python.framework/Versions/3.13/lib/python3.13/asyncio/streams.py", line 769, in readexactly
+    await self._wait_for_data('readexactly')
+  File "/opt/homebrew/Cellar/python@3.13/3.13.3/Frameworks/Python.framework/Versions/3.13/lib/python3.13/asyncio/streams.py", line 539, in _wait_for_data
+    await self._waiter
+asyncio.exceptions.CancelledError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/client/exchange.py", line 40, in shutdown
+    await client.stop()
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/client/renter/renter.py", line 55, in stop
+    await self.send_stop_rental()
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/client/renter/renter.py", line 31, in send_stop_rental
+    await self.send_message(msg)
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/common/client.py", line 58, in send_message
+    await self.websocket.send(json.dumps(message))
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/websockets/legacy/protocol.py", line 620, in send
+    await self.ensure_open()
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/websockets/legacy/protocol.py", line 916, in ensure_open
+    raise self.connection_closed_exc()
+websockets.exceptions.ConnectionClosedError: no close frame received or sent
+2025-05-02 18:03:26,141 [INFO] renter: what the fuck0x70997970C51812dc3A010C7d01b50e0d17dc79C8
+2025-05-02 18:03:26,147 [INFO] renter: sent open request to 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+2025-05-02 18:03:32,452 [INFO] renter: received kill signal, stopping rental...
+2025-05-02 18:04:02,071 [INFO] renter: what the fuck0x70997970C51812dc3A010C7d01b50e0d17dc79C8
+2025-05-02 18:04:02,077 [INFO] renter: sent open request to 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+2025-05-02 18:04:04,143 [INFO] renter: received invoice: {'nonce': 0, 'channel_id': 1, 'sigL': '9f64393a5e81e71aeaaf94ba377396d9beddc166fc35b0c32b2828d57872edc1554dc231451af2b1bbba4092d4ffda6ff9631580d2eea3ab8af8c80cf5ab4f561c', 'sigR': '9f64393a5e81e71aeaaf94ba377396d9beddc166fc35b0c32b2828d57872edc1554dc231451af2b1bbba4092d4ffda6ff9631580d2eea3ab8af8c80cf5ab4f561c'}
+2025-05-02 18:04:24,151 [INFO] renter: received invoice: {'nonce': 1, 'channel_id': 1, 'sigL': '3cdb8fc5e4a69fc69c91a32cb6b5d0cb2454acd7a52de15ab047e2f0098c5b9268f2c985e10fa16625f87694d7330af43cb5a0ee3c05c0c4db29f87d976e7ab21c', 'sigR': '3cdb8fc5e4a69fc69c91a32cb6b5d0cb2454acd7a52de15ab047e2f0098c5b9268f2c985e10fa16625f87694d7330af43cb5a0ee3c05c0c4db29f87d976e7ab21c'}
+2025-05-02 18:04:35,708 [INFO] renter: received kill signal, stopping rental...
+2025-05-02 18:16:59,023 [INFO] renter: what the fuck0x70997970C51812dc3A010C7d01b50e0d17dc79C8
+2025-05-02 18:16:59,030 [INFO] renter: sent open request to 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+2025-05-02 18:17:09,482 [INFO] renter: received kill signal, stopping rental...
+2025-05-02 18:17:09,490 [INFO] renter: renter client shutdown complete!
+2025-05-02 18:19:22,072 [INFO] renter: what the fuck0x70997970C51812dc3A010C7d01b50e0d17dc79C8
+2025-05-02 18:19:22,078 [INFO] renter: sent open request to 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+2025-05-02 18:19:29,943 [ERROR] asyncio: Task exception was never retrieved
+future: <Task finished name='Task-5' coro=<main.<locals>.runner.<locals>.shutdown() done, defined at /Users/timurtakhtarov/School/CSCE489/computemarket/offchain/client/exchange.py:37> exception=ConnectionClosedOK(Close(code=1001, reason=''), Close(code=1001, reason=''), True)>
+Traceback (most recent call last):
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/client/exchange.py", line 40, in shutdown
+    await client.stop()
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/client/renter/renter.py", line 61, in stop
+    await self.send_stop_rental()
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/client/renter/renter.py", line 31, in send_stop_rental
+    await self.send_message(msg)
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/common/client.py", line 58, in send_message
+    await self.websocket.send(json.dumps(message))
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/websockets/legacy/protocol.py", line 620, in send
+    await self.ensure_open()
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/websockets/legacy/protocol.py", line 921, in ensure_open
+    raise self.connection_closed_exc()
+websockets.exceptions.ConnectionClosedOK: received 1001 (going away); then sent 1001 (going away)
+2025-05-02 18:20:32,241 [INFO] renter: what the fuck0x70997970C51812dc3A010C7d01b50e0d17dc79C8
+2025-05-02 18:20:32,247 [INFO] renter: sent open request to 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+2025-05-02 18:21:39,507 [INFO] renter: what the fuck0x70997970C51812dc3A010C7d01b50e0d17dc79C8
+2025-05-02 18:21:39,513 [INFO] renter: sent open request to 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+2025-05-02 18:21:49,132 [INFO] renter: received kill signal, stopping rental...
+2025-05-02 18:22:44,804 [INFO] renter: what the fuck0x70997970C51812dc3A010C7d01b50e0d17dc79C8
+2025-05-02 18:22:44,810 [INFO] renter: sent open request to 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+2025-05-02 18:23:34,181 [INFO] renter: received kill signal, stopping rental...
+2025-05-02 18:26:54,130 [INFO] renter: sent open request to 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+2025-05-02 18:26:55,076 [INFO] renter: received invoice: {'nonce': 0, 'channel_id': 64442648639341513120600906712959082926124635216814937890126777039898815220471, 'sigL': '9cb81eea4fdd8f86f6d1243289408202f33dd6019258ff431cdcb1b67fdcbd3a5124ed5d3cfed9feaeb26bee8aab4fe1611a93c53f0244b740a3accefcd176ab1c', 'sigR': '9cb81eea4fdd8f86f6d1243289408202f33dd6019258ff431cdcb1b67fdcbd3a5124ed5d3cfed9feaeb26bee8aab4fe1611a93c53f0244b740a3accefcd176ab1c'}
+2025-05-02 18:27:15,086 [INFO] renter: received invoice: {'nonce': 1, 'channel_id': 64442648639341513120600906712959082926124635216814937890126777039898815220471, 'sigL': '818c43408166f31409eea43d7482e31333b5484de563f418818fe115b6b87e8218da2e21cd1060a471e7ed3cc33d0ed3e190c6951a3c4cf7132294ab2da2c4b31c', 'sigR': '818c43408166f31409eea43d7482e31333b5484de563f418818fe115b6b87e8218da2e21cd1060a471e7ed3cc33d0ed3e190c6951a3c4cf7132294ab2da2c4b31c'}
+2025-05-02 18:27:30,613 [INFO] renter: received kill signal, stopping rental...

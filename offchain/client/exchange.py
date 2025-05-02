@@ -17,10 +17,12 @@ def main():
 
     args = parser.parse_args()
 
-    if args.landlord:
+    print("what the fuck please")
+
+    if args.landlord: 
         client = LandlordClient()
-        # client.public_key = "0x939d31bD382a5B0D536ff45E7d086321738867a2"
-        # client.private_key = "5af990b93cd5a5985cef57dc599eff96257b16751f0256a1ce8669d1277fa30e"
+        client.public_key = "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266"
+        client.private_key = "0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80"
     elif args.renter:
         if not args.landlord_id:
             raise ValueError("You must specify --landlord-id when using -r")
@@ -36,7 +38,7 @@ def main():
             if not stop_called.is_set():
                 stop_called.set()
                 await client.stop()
-                await asyncio.sleep(0.1)  # allow logs to flush
+                await asyncio.sleep(0.1)  
                 loop.stop()
 
         loop = asyncio.get_running_loop()

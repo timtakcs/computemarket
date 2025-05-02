@@ -15,9 +15,10 @@ class Client:
         self.role = role
         self.websocket = None
 
+        self.channel = None
         self.invoices = []
 
-        env_path = Path('.') / '.env'
+        env_path = Path('..') / '.env'
         load_dotenv(dotenv_path=env_path)
 
         self.server_uri = os.getenv("SERVER_URI")

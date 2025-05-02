@@ -37,18 +37,24 @@ class RenterClient(Client):
         async for message in self.websocket:
             if self._stop_event.is_set():
                 break
-
             json_message = self.deserialize(message)
-            new_invoice = json_message[PAYLOAD]
-            sigR = self.sign(new_invoice)
-
-            new_invoice[RENTERSIG] = sigR
-            self.invoices.append(new_invoice)
             
-            self.logger.info(f"received invoice: {new_invoice}")
-            json_message[PAYLOAD] = new_invoice
+            action = json_message[ACTION]
 
-            await self.send_message(json_message)
+            if action == SIGN:
+                new_invoice = json_message[PAYLOAD]
+                sigR = self.sign(new_invoice)
+
+                new_invoice[RENTERSIG] = sigR
+                self.invoices.append(new_invoice)
+                
+                self.logger.info(f"received invoice: {new_invoice}")
+                json_message[PAYLOAD] = new_invoice
+
+                await self.send_message(json_message)
+            elif action == STARTRENTAL:
+                channelid = int(json_message[CHANNELID], 16)
+                self.channel = channelid
     
     async def stop(self):
         if self.websocket:

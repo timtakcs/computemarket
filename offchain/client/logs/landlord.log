@@ -1,0 +1,289 @@
+2025-05-02 17:31:16,595 [INFO] landlord: what the fuck0x70997970C51812dc3A010C7d01b50e0d17dc79C8
+2025-05-02 17:31:16,605 [INFO] landlord: active is set: False
+2025-05-02 17:31:21,404 [ERROR] asyncio: Task exception was never retrieved
+future: <Task finished name='Task-5' coro=<main.<locals>.runner.<locals>.shutdown() done, defined at /Users/timurtakhtarov/School/CSCE489/computemarket/offchain/client/exchange.py:37> exception=AttributeError("'LandlordClient' object has no attribute 'stop'")>
+Traceback (most recent call last):
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/client/exchange.py", line 40, in shutdown
+    await client.stop()
+          ^^^^^^^^^^^
+AttributeError: 'LandlordClient' object has no attribute 'stop'
+2025-05-02 17:33:20,716 [INFO] landlord: what the fuck0x70997970C51812dc3A010C7d01b50e0d17dc79C8
+2025-05-02 17:33:20,725 [INFO] landlord: active is set: False
+2025-05-02 17:33:22,248 [INFO] landlord: shutdown initiated for landlord client...
+2025-05-02 17:33:22,249 [INFO] landlord: stopping container...
+2025-05-02 17:33:31,469 [INFO] landlord: what the fuck0x70997970C51812dc3A010C7d01b50e0d17dc79C8
+2025-05-02 17:33:31,478 [INFO] landlord: active is set: False
+2025-05-02 17:42:01,326 [INFO] landlord: shutdown initiated for landlord client...
+2025-05-02 17:42:01,328 [INFO] landlord: stopping container...
+2025-05-02 17:42:01,329 [ERROR] asyncio: Task exception was never retrieved
+future: <Task finished name='Task-5' coro=<main.<locals>.runner.<locals>.shutdown() done, defined at /Users/timurtakhtarov/School/CSCE489/computemarket/offchain/client/exchange.py:37> exception=ConnectionClosedOK(Close(code=1001, reason=''), Close(code=1001, reason=''), True)>
+Traceback (most recent call last):
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/client/exchange.py", line 40, in shutdown
+    await client.stop()
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/client/landlord/landlord.py", line 115, in stop
+    await self.send_message(stop_msg)
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/common/client.py", line 57, in send_message
+    async def send_message(self, message: dict):
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/websockets/legacy/protocol.py", line 620, in send
+    await self.ensure_open()
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/websockets/legacy/protocol.py", line 921, in ensure_open
+    raise self.connection_closed_exc()
+websockets.exceptions.ConnectionClosedOK: received 1001 (going away); then sent 1001 (going away)
+2025-05-02 17:42:03,111 [INFO] landlord: what the fuck0x70997970C51812dc3A010C7d01b50e0d17dc79C8
+2025-05-02 17:42:03,120 [INFO] landlord: active is set: False
+2025-05-02 17:42:17,321 [INFO] landlord: starting rental...
+2025-05-02 17:42:17,321 [INFO] landlord: starting container...
+2025-05-02 17:42:19,843 [INFO] landlord: container started on host port 45180
+2025-05-02 17:42:19,857 [INFO] landlord: sent invoice to renter...
+2025-05-02 17:42:19,869 [INFO] landlord: got signed invoice: {'nonce': 0, 'channel_id': 1, 'sigL': '9f64393a5e81e71aeaaf94ba377396d9beddc166fc35b0c32b2828d57872edc1554dc231451af2b1bbba4092d4ffda6ff9631580d2eea3ab8af8c80cf5ab4f561c', 'sigR': '9f64393a5e81e71aeaaf94ba377396d9beddc166fc35b0c32b2828d57872edc1554dc231451af2b1bbba4092d4ffda6ff9631580d2eea3ab8af8c80cf5ab4f561c'}
+2025-05-02 17:42:39,869 [INFO] landlord: sent invoice to renter...
+2025-05-02 17:42:39,876 [INFO] landlord: got signed invoice: {'nonce': 1, 'channel_id': 1, 'sigL': '3cdb8fc5e4a69fc69c91a32cb6b5d0cb2454acd7a52de15ab047e2f0098c5b9268f2c985e10fa16625f87694d7330af43cb5a0ee3c05c0c4db29f87d976e7ab21c', 'sigR': '3cdb8fc5e4a69fc69c91a32cb6b5d0cb2454acd7a52de15ab047e2f0098c5b9268f2c985e10fa16625f87694d7330af43cb5a0ee3c05c0c4db29f87d976e7ab21c'}
+2025-05-02 17:42:55,520 [INFO] landlord: stopping rental...
+2025-05-02 17:42:55,521 [INFO] landlord: send invoices cancelled...
+2025-05-02 17:42:55,521 [INFO] landlord: stopping container...
+2025-05-02 17:42:55,717 [INFO] landlord: container stopped and removed.
+2025-05-02 17:43:59,489 [WARNING] landlord: got an unknown action!
+2025-05-02 17:44:28,106 [WARNING] landlord: got an unknown action!
+2025-05-02 17:44:34,891 [WARNING] landlord: got an unknown action!
+2025-05-02 17:46:42,678 [INFO] landlord: shutdown initiated for landlord client...
+2025-05-02 17:46:42,680 [INFO] landlord: stopping container...
+2025-05-02 17:46:42,692 [WARNING] landlord: Failed to stop/remove container: 404 Client Error for http+docker://localhost/v1.49/containers/fb040e77909b88419688ffb2afeddaccd3b95e313c0f032fa7ad457ee070b73f/stop: Not Found ("No such container: fb040e77909b88419688ffb2afeddaccd3b95e313c0f032fa7ad457ee070b73f")
+2025-05-02 17:46:42,692 [ERROR] asyncio: Task exception was never retrieved
+future: <Task finished name='Task-6' coro=<main.<locals>.runner.<locals>.shutdown() done, defined at /Users/timurtakhtarov/School/CSCE489/computemarket/offchain/client/exchange.py:37> exception=ConnectionClosedOK(Close(code=1001, reason=''), Close(code=1001, reason=''), True)>
+Traceback (most recent call last):
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/client/exchange.py", line 40, in shutdown
+    await client.stop()
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/client/landlord/landlord.py", line 115, in stop
+    await self.send_message(stop_msg)
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/common/client.py", line 58, in send_message
+    await self.websocket.send(json.dumps(message))
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/websockets/legacy/protocol.py", line 620, in send
+    await self.ensure_open()
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/websockets/legacy/protocol.py", line 921, in ensure_open
+    raise self.connection_closed_exc()
+websockets.exceptions.ConnectionClosedOK: received 1001 (going away); then sent 1001 (going away)
+2025-05-02 17:46:44,297 [INFO] landlord: what the fuck0x70997970C51812dc3A010C7d01b50e0d17dc79C8
+2025-05-02 17:46:44,322 [INFO] landlord: active is set: False
+2025-05-02 17:46:50,338 [WARNING] landlord: got an unknown action!
+2025-05-02 17:46:52,061 [INFO] landlord: shutdown initiated for landlord client...
+2025-05-02 17:46:52,062 [INFO] landlord: stopping container...
+2025-05-02 17:46:52,070 [INFO] landlord: landlord client shutdown complete!
+2025-05-02 17:49:47,167 [INFO] landlord: what the fuck0x70997970C51812dc3A010C7d01b50e0d17dc79C8
+2025-05-02 17:49:47,199 [INFO] landlord: active is set: False
+2025-05-02 17:49:55,999 [WARNING] landlord: got an unknown action!
+2025-05-02 17:49:57,080 [INFO] landlord: shutdown initiated for landlord client...
+2025-05-02 17:49:57,081 [INFO] landlord: stopping container...
+2025-05-02 17:52:18,359 [INFO] landlord: what the fuck0x70997970C51812dc3A010C7d01b50e0d17dc79C8
+2025-05-02 17:52:18,369 [INFO] landlord: active is set: False
+2025-05-02 17:52:28,292 [INFO] landlord: shutdown initiated for landlord client...
+2025-05-02 17:52:28,293 [INFO] landlord: stopping container...
+2025-05-02 17:52:28,293 [ERROR] asyncio: Task exception was never retrieved
+future: <Task finished name='Task-5' coro=<main.<locals>.runner.<locals>.shutdown() done, defined at /Users/timurtakhtarov/School/CSCE489/computemarket/offchain/client/exchange.py:37> exception=ConnectionClosedOK(Close(code=1001, reason=''), Close(code=1001, reason=''), True)>
+Traceback (most recent call last):
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/client/exchange.py", line 40, in shutdown
+    await client.stop()
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/client/landlord/landlord.py", line 115, in stop
+    await self.send_message(stop_msg)
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/common/client.py", line 58, in send_message
+    await self.websocket.send(json.dumps(message))
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/websockets/legacy/protocol.py", line 620, in send
+    await self.ensure_open()
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/websockets/legacy/protocol.py", line 921, in ensure_open
+    raise self.connection_closed_exc()
+websockets.exceptions.ConnectionClosedOK: received 1001 (going away); then sent 1001 (going away)
+2025-05-02 17:52:39,977 [INFO] landlord: what the fuck0x70997970C51812dc3A010C7d01b50e0d17dc79C8
+2025-05-02 17:52:39,987 [INFO] landlord: active is set: False
+2025-05-02 17:52:50,256 [INFO] landlord: shutdown initiated for landlord client...
+2025-05-02 17:52:50,257 [INFO] landlord: stopping container...
+2025-05-02 17:52:50,257 [ERROR] asyncio: Task exception was never retrieved
+future: <Task finished name='Task-5' coro=<main.<locals>.runner.<locals>.shutdown() done, defined at /Users/timurtakhtarov/School/CSCE489/computemarket/offchain/client/exchange.py:37> exception=ConnectionClosedOK(Close(code=1001, reason=''), Close(code=1001, reason=''), True)>
+Traceback (most recent call last):
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/client/exchange.py", line 40, in shutdown
+    await client.stop()
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/client/landlord/landlord.py", line 115, in stop
+    await self.send_message(stop_msg)
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/common/client.py", line 58, in send_message
+    await self.websocket.send(json.dumps(message))
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/websockets/legacy/protocol.py", line 620, in send
+    await self.ensure_open()
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/websockets/legacy/protocol.py", line 921, in ensure_open
+    raise self.connection_closed_exc()
+websockets.exceptions.ConnectionClosedOK: received 1001 (going away); then sent 1001 (going away)
+2025-05-02 17:55:07,936 [INFO] landlord: what the fuck0x70997970C51812dc3A010C7d01b50e0d17dc79C8
+2025-05-02 17:55:07,945 [INFO] landlord: active is set: False
+2025-05-02 17:55:44,356 [INFO] landlord: shutdown initiated for landlord client...
+2025-05-02 17:55:44,358 [INFO] landlord: stopping container...
+2025-05-02 17:55:44,358 [ERROR] asyncio: Task exception was never retrieved
+future: <Task finished name='Task-5' coro=<main.<locals>.runner.<locals>.shutdown() done, defined at /Users/timurtakhtarov/School/CSCE489/computemarket/offchain/client/exchange.py:37> exception=ConnectionClosedOK(Close(code=1001, reason=''), Close(code=1001, reason=''), True)>
+Traceback (most recent call last):
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/client/exchange.py", line 40, in shutdown
+    await client.stop()
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/client/landlord/landlord.py", line 115, in stop
+    await self.send_message(stop_msg)
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/common/client.py", line 58, in send_message
+    await self.websocket.send(json.dumps(message))
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/websockets/legacy/protocol.py", line 620, in send
+    await self.ensure_open()
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/websockets/legacy/protocol.py", line 921, in ensure_open
+    raise self.connection_closed_exc()
+websockets.exceptions.ConnectionClosedOK: received 1001 (going away); then sent 1001 (going away)
+2025-05-02 17:55:45,490 [INFO] landlord: what the fuck0x70997970C51812dc3A010C7d01b50e0d17dc79C8
+2025-05-02 17:55:45,499 [INFO] landlord: active is set: False
+2025-05-02 17:56:52,967 [INFO] landlord: shutdown initiated for landlord client...
+2025-05-02 17:56:52,968 [INFO] landlord: stopping container...
+2025-05-02 17:56:52,969 [ERROR] asyncio: Task exception was never retrieved
+future: <Task finished name='Task-5' coro=<main.<locals>.runner.<locals>.shutdown() done, defined at /Users/timurtakhtarov/School/CSCE489/computemarket/offchain/client/exchange.py:37> exception=ConnectionClosedOK(Close(code=1001, reason=''), Close(code=1001, reason=''), True)>
+Traceback (most recent call last):
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/client/exchange.py", line 40, in shutdown
+    await client.stop()
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/client/landlord/landlord.py", line 115, in stop
+    await self.send_message(stop_msg)
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/common/client.py", line 58, in send_message
+    await self.websocket.send(json.dumps(message))
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/websockets/legacy/protocol.py", line 620, in send
+    await self.ensure_open()
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/websockets/legacy/protocol.py", line 921, in ensure_open
+    raise self.connection_closed_exc()
+websockets.exceptions.ConnectionClosedOK: received 1001 (going away); then sent 1001 (going away)
+2025-05-02 17:56:57,715 [INFO] landlord: what the fuck0x70997970C51812dc3A010C7d01b50e0d17dc79C8
+2025-05-02 17:56:57,724 [INFO] landlord: active is set: False
+2025-05-02 17:57:24,624 [INFO] landlord: shutdown initiated for landlord client...
+2025-05-02 17:57:24,625 [INFO] landlord: stopping container...
+2025-05-02 17:57:24,633 [INFO] landlord: landlord client shutdown complete!
+2025-05-02 17:57:40,914 [INFO] landlord: what the fuck0x70997970C51812dc3A010C7d01b50e0d17dc79C8
+2025-05-02 17:57:40,924 [INFO] landlord: active is set: False
+2025-05-02 17:57:45,344 [WARNING] landlord: got an unknown action!
+2025-05-02 17:57:46,048 [INFO] landlord: shutdown initiated for landlord client...
+2025-05-02 17:57:46,049 [INFO] landlord: stopping container...
+2025-05-02 17:59:07,666 [INFO] landlord: what the fuck0x70997970C51812dc3A010C7d01b50e0d17dc79C8
+2025-05-02 17:59:07,676 [INFO] landlord: active is set: False
+2025-05-02 17:59:12,159 [WARNING] landlord: got an unknown action!
+2025-05-02 17:59:13,489 [INFO] landlord: shutdown initiated for landlord client...
+2025-05-02 17:59:13,489 [INFO] landlord: stopping container...
+2025-05-02 18:00:12,855 [INFO] landlord: what the fuck0x70997970C51812dc3A010C7d01b50e0d17dc79C8
+2025-05-02 18:00:12,864 [INFO] landlord: active is set: False
+2025-05-02 18:00:21,425 [INFO] landlord: shutdown initiated for landlord client...
+2025-05-02 18:00:21,425 [INFO] landlord: stopping container...
+2025-05-02 18:00:21,425 [ERROR] asyncio: Task exception was never retrieved
+future: <Task finished name='Task-5' coro=<main.<locals>.runner.<locals>.shutdown() done, defined at /Users/timurtakhtarov/School/CSCE489/computemarket/offchain/client/exchange.py:37> exception=ConnectionClosedOK(Close(code=1001, reason=''), Close(code=1001, reason=''), True)>
+Traceback (most recent call last):
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/client/exchange.py", line 40, in shutdown
+    await client.stop()
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/client/landlord/landlord.py", line 115, in stop
+    await self.send_message(stop_msg)
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/common/client.py", line 58, in send_message
+    await self.websocket.send(json.dumps(message))
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/websockets/legacy/protocol.py", line 620, in send
+    await self.ensure_open()
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/websockets/legacy/protocol.py", line 921, in ensure_open
+    raise self.connection_closed_exc()
+websockets.exceptions.ConnectionClosedOK: received 1001 (going away); then sent 1001 (going away)
+2025-05-02 18:01:00,349 [INFO] landlord: what the fuck0x70997970C51812dc3A010C7d01b50e0d17dc79C8
+2025-05-02 18:01:00,358 [INFO] landlord: active is set: False
+2025-05-02 18:01:41,438 [INFO] landlord: shutdown initiated for landlord client...
+2025-05-02 18:01:41,440 [INFO] landlord: stopping container...
+2025-05-02 18:01:56,678 [INFO] landlord: what the fuck0x70997970C51812dc3A010C7d01b50e0d17dc79C8
+2025-05-02 18:01:56,687 [INFO] landlord: active is set: False
+2025-05-02 18:01:59,283 [INFO] landlord: starting rental...
+2025-05-02 18:01:59,284 [INFO] landlord: starting container...
+2025-05-02 18:02:01,766 [INFO] landlord: container started on host port 45180
+2025-05-02 18:02:01,786 [INFO] landlord: sent invoice to renter...
+2025-05-02 18:02:01,819 [INFO] landlord: got signed invoice: {'nonce': 0, 'channel_id': 1, 'sigL': '9f64393a5e81e71aeaaf94ba377396d9beddc166fc35b0c32b2828d57872edc1554dc231451af2b1bbba4092d4ffda6ff9631580d2eea3ab8af8c80cf5ab4f561c', 'sigR': '9f64393a5e81e71aeaaf94ba377396d9beddc166fc35b0c32b2828d57872edc1554dc231451af2b1bbba4092d4ffda6ff9631580d2eea3ab8af8c80cf5ab4f561c'}
+2025-05-02 18:02:21,798 [INFO] landlord: sent invoice to renter...
+2025-05-02 18:02:21,808 [INFO] landlord: got signed invoice: {'nonce': 1, 'channel_id': 1, 'sigL': '3cdb8fc5e4a69fc69c91a32cb6b5d0cb2454acd7a52de15ab047e2f0098c5b9268f2c985e10fa16625f87694d7330af43cb5a0ee3c05c0c4db29f87d976e7ab21c', 'sigR': '3cdb8fc5e4a69fc69c91a32cb6b5d0cb2454acd7a52de15ab047e2f0098c5b9268f2c985e10fa16625f87694d7330af43cb5a0ee3c05c0c4db29f87d976e7ab21c'}
+2025-05-02 18:02:25,159 [INFO] landlord: stopping rental...
+2025-05-02 18:02:25,159 [INFO] landlord: send invoices cancelled...
+2025-05-02 18:02:25,159 [INFO] landlord: stopping container...
+2025-05-02 18:02:25,334 [INFO] landlord: container stopped and removed.
+2025-05-02 18:02:43,019 [INFO] landlord: shutdown initiated for landlord client...
+2025-05-02 18:02:43,020 [INFO] landlord: stopping container...
+2025-05-02 18:02:43,026 [WARNING] landlord: Failed to stop/remove container: 404 Client Error for http+docker://localhost/v1.49/containers/362b206277101f182942bda643434377bc35bf242cc37ceafe725e29f2ee542f/stop: Not Found ("No such container: 362b206277101f182942bda643434377bc35bf242cc37ceafe725e29f2ee542f")
+2025-05-02 18:03:29,281 [INFO] landlord: what the fuck0x70997970C51812dc3A010C7d01b50e0d17dc79C8
+2025-05-02 18:03:29,310 [INFO] landlord: active is set: False
+2025-05-02 18:03:32,453 [WARNING] landlord: got an unknown action!
+2025-05-02 18:03:36,012 [INFO] landlord: shutdown initiated for landlord client...
+2025-05-02 18:03:36,012 [INFO] landlord: stopping container...
+2025-05-02 18:03:36,020 [INFO] landlord: landlord client shutdown complete!
+2025-05-02 18:04:00,178 [INFO] landlord: what the fuck0x70997970C51812dc3A010C7d01b50e0d17dc79C8
+2025-05-02 18:04:00,205 [INFO] landlord: active is set: False
+2025-05-02 18:04:02,084 [INFO] landlord: starting rental...
+2025-05-02 18:04:02,084 [INFO] landlord: starting container...
+2025-05-02 18:04:04,117 [INFO] landlord: container started on host port 45180
+2025-05-02 18:04:04,132 [INFO] landlord: sent invoice to renter...
+2025-05-02 18:04:04,144 [INFO] landlord: got signed invoice: {'nonce': 0, 'channel_id': 1, 'sigL': '9f64393a5e81e71aeaaf94ba377396d9beddc166fc35b0c32b2828d57872edc1554dc231451af2b1bbba4092d4ffda6ff9631580d2eea3ab8af8c80cf5ab4f561c', 'sigR': '9f64393a5e81e71aeaaf94ba377396d9beddc166fc35b0c32b2828d57872edc1554dc231451af2b1bbba4092d4ffda6ff9631580d2eea3ab8af8c80cf5ab4f561c'}
+2025-05-02 18:04:24,144 [INFO] landlord: sent invoice to renter...
+2025-05-02 18:04:24,153 [INFO] landlord: got signed invoice: {'nonce': 1, 'channel_id': 1, 'sigL': '3cdb8fc5e4a69fc69c91a32cb6b5d0cb2454acd7a52de15ab047e2f0098c5b9268f2c985e10fa16625f87694d7330af43cb5a0ee3c05c0c4db29f87d976e7ab21c', 'sigR': '3cdb8fc5e4a69fc69c91a32cb6b5d0cb2454acd7a52de15ab047e2f0098c5b9268f2c985e10fa16625f87694d7330af43cb5a0ee3c05c0c4db29f87d976e7ab21c'}
+2025-05-02 18:04:35,709 [INFO] landlord: stopping rental...
+2025-05-02 18:04:35,709 [INFO] landlord: send invoices cancelled...
+2025-05-02 18:04:35,709 [INFO] landlord: stopping container...
+2025-05-02 18:04:35,868 [INFO] landlord: container stopped and removed.
+2025-05-02 18:04:37,342 [INFO] landlord: shutdown initiated for landlord client...
+2025-05-02 18:04:37,342 [INFO] landlord: stopping container...
+2025-05-02 18:04:37,351 [WARNING] landlord: Failed to stop/remove container: 404 Client Error for http+docker://localhost/v1.49/containers/5c6b2b6c959aa7c59a2f064921637d545cf694d96a5a70d5dd3db8bf081ba3ae/stop: Not Found ("No such container: 5c6b2b6c959aa7c59a2f064921637d545cf694d96a5a70d5dd3db8bf081ba3ae")
+2025-05-02 18:04:37,357 [INFO] landlord: landlord client shutdown complete!
+2025-05-02 18:16:57,127 [INFO] landlord: what the fuck0x70997970C51812dc3A010C7d01b50e0d17dc79C8
+2025-05-02 18:16:57,137 [INFO] landlord: active is set: False
+2025-05-02 18:17:08,792 [INFO] landlord: shutdown initiated for landlord client...
+2025-05-02 18:17:08,792 [INFO] landlord: stopping container...
+2025-05-02 18:19:20,361 [INFO] landlord: what the fuck0x70997970C51812dc3A010C7d01b50e0d17dc79C8
+2025-05-02 18:19:20,371 [INFO] landlord: active is set: False
+2025-05-02 18:19:29,276 [INFO] landlord: shutdown initiated for landlord client...
+2025-05-02 18:19:29,276 [INFO] landlord: stopping container...
+2025-05-02 18:19:29,276 [ERROR] asyncio: Task exception was never retrieved
+future: <Task finished name='Task-5' coro=<main.<locals>.runner.<locals>.shutdown() done, defined at /Users/timurtakhtarov/School/CSCE489/computemarket/offchain/client/exchange.py:37> exception=ConnectionClosedOK(Close(code=1001, reason=''), Close(code=1001, reason=''), True)>
+Traceback (most recent call last):
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/client/exchange.py", line 40, in shutdown
+    await client.stop()
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/client/landlord/landlord.py", line 115, in stop
+    await self.send_message(stop_msg)
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/common/client.py", line 58, in send_message
+    await self.websocket.send(json.dumps(message))
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/websockets/legacy/protocol.py", line 620, in send
+    await self.ensure_open()
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/websockets/legacy/protocol.py", line 921, in ensure_open
+    raise self.connection_closed_exc()
+websockets.exceptions.ConnectionClosedOK: received 1001 (going away); then sent 1001 (going away)
+2025-05-02 18:20:30,083 [INFO] landlord: what the fuck0x70997970C51812dc3A010C7d01b50e0d17dc79C8
+2025-05-02 18:20:30,092 [INFO] landlord: active is set: False
+2025-05-02 18:20:32,253 [INFO] landlord: starting rental...
+2025-05-02 18:20:32,253 [INFO] landlord: starting container...
+2025-05-02 18:20:34,705 [INFO] landlord: container started on host port 45180
+2025-05-02 18:21:28,495 [INFO] landlord: shutdown initiated for landlord client...
+2025-05-02 18:21:28,503 [ERROR] asyncio: Task exception was never retrieved
+future: <Task finished name='Task-6' coro=<main.<locals>.runner.<locals>.shutdown() done, defined at /Users/timurtakhtarov/School/CSCE489/computemarket/offchain/client/exchange.py:37> exception=ValueError("invalid literal for int() with base 10: b'\\xb2Za\\xe2W\\x93\\xb4\\x17I\\x80\\xef\\x06\\xcf\\x7f\\xa9\\xd3N\\xd9\\x9br\\xd6\\xed\\xf4\\x87\\x7f\\xa7\\xf3!\\xf8\\x89\\x01\\xd8'")>
+Traceback (most recent call last):
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/client/exchange.py", line 40, in shutdown
+    await client.stop()
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/client/landlord/landlord.py", line 106, in stop
+    await self.invoice_task
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/client/landlord/landlord.py", line 88, in invoice_loop
+    sigL = self.sign(invoice[PAYLOAD])
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/common/client.py", line 36, in sign
+    channel_id = int(invoice[CHANNELID])
+ValueError: invalid literal for int() with base 10: b'\xb2Za\xe2W\x93\xb4\x17I\x80\xef\x06\xcf\x7f\xa9\xd3N\xd9\x9br\xd6\xed\xf4\x87\x7f\xa7\xf3!\xf8\x89\x01\xd8'
+2025-05-02 18:21:29,853 [INFO] landlord: what the fuck0x70997970C51812dc3A010C7d01b50e0d17dc79C8
+2025-05-02 18:21:29,876 [INFO] landlord: active is set: False
+2025-05-02 18:21:39,521 [INFO] landlord: starting rental...
+2025-05-02 18:21:39,521 [INFO] landlord: starting container...
+2025-05-02 18:21:40,340 [ERROR] landlord: ❌ Failed to start container: 500 Server Error for http+docker://localhost/v1.49/containers/13cad5ebcd5f7099cac390dab933311168068e49d76fd5c5752a3d1f96200611/start: Internal Server Error ("failed to set up container networking: driver failed programming external connectivity on endpoint competent_meitner (9338d42cec9ce2934625e38ce1159d797d9ace3778e495584e2fecb9e28abe50): Bind for 0.0.0.0:45180 failed: port is already allocated")
+2025-05-02 18:21:49,133 [INFO] landlord: stopping rental...
+2025-05-02 18:22:42,430 [INFO] landlord: what the fuck0x70997970C51812dc3A010C7d01b50e0d17dc79C8
+2025-05-02 18:22:42,442 [INFO] landlord: active is set: False
+2025-05-02 18:22:44,818 [INFO] landlord: starting rental...
+2025-05-02 18:22:44,818 [INFO] landlord: starting container...
+2025-05-02 18:22:45,781 [INFO] landlord: container started on host port 45180
+2025-05-02 18:23:34,182 [INFO] landlord: stopping rental...
+2025-05-02 18:26:52,315 [INFO] landlord: active is set: False
+2025-05-02 18:26:54,136 [INFO] landlord: starting rental...
+2025-05-02 18:26:54,136 [INFO] landlord: starting container...
+2025-05-02 18:26:55,053 [ERROR] landlord: ❌ Failed to start container: 500 Server Error for http+docker://localhost/v1.49/containers/b783cead2025cf40a2db80c53abaa876c0e31210acab5e026409ee39b4e2dd95/start: Internal Server Error ("failed to set up container networking: driver failed programming external connectivity on endpoint nervous_leakey (28dc6e9ef13e970555504d9028e5771a80107f1eee3f31d8519e6b2ef3ad7bc6): Bind for 0.0.0.0:45180 failed: port is already allocated")
+2025-05-02 18:26:55,068 [INFO] landlord: sent invoice to renter...
+2025-05-02 18:26:55,077 [INFO] landlord: got signed invoice: {'nonce': 0, 'channel_id': 64442648639341513120600906712959082926124635216814937890126777039898815220471, 'sigL': '9cb81eea4fdd8f86f6d1243289408202f33dd6019258ff431cdcb1b67fdcbd3a5124ed5d3cfed9feaeb26bee8aab4fe1611a93c53f0244b740a3accefcd176ab1c', 'sigR': '9cb81eea4fdd8f86f6d1243289408202f33dd6019258ff431cdcb1b67fdcbd3a5124ed5d3cfed9feaeb26bee8aab4fe1611a93c53f0244b740a3accefcd176ab1c'}
+2025-05-02 18:27:15,079 [INFO] landlord: sent invoice to renter...
+2025-05-02 18:27:15,088 [INFO] landlord: got signed invoice: {'nonce': 1, 'channel_id': 64442648639341513120600906712959082926124635216814937890126777039898815220471, 'sigL': '818c43408166f31409eea43d7482e31333b5484de563f418818fe115b6b87e8218da2e21cd1060a471e7ed3cc33d0ed3e190c6951a3c4cf7132294ab2da2c4b31c', 'sigR': '818c43408166f31409eea43d7482e31333b5484de563f418818fe115b6b87e8218da2e21cd1060a471e7ed3cc33d0ed3e190c6951a3c4cf7132294ab2da2c4b31c'}
+2025-05-02 18:27:30,614 [INFO] landlord: stopping rental...
+2025-05-02 18:27:30,614 [INFO] landlord: send invoices cancelled...
+2025-05-02 18:27:30,615 [INFO] landlord: stopping container...
+2025-05-02 18:27:58,524 [INFO] landlord: shutdown initiated for landlord client...
+2025-05-02 18:27:58,525 [INFO] landlord: stopping container...
