@@ -1001,3 +1001,881 @@ Traceback (most recent call last):
 websockets.exceptions.ConnectionClosedOK: received 1000 (OK); then sent 1000 (OK)
 2025-05-02 18:27:59,842 [INFO] websockets.server: server closing
 2025-05-02 18:27:59,843 [INFO] websockets.server: server closed
+2025-05-02 18:35:57,131 [INFO] websockets.server: server listening on 0.0.0.0:8765
+2025-05-02 18:35:59,061 [INFO] websockets.server: connection open
+2025-05-02 18:35:59,062 [INFO] server: identified 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266 with <websockets.asyncio.server.ServerConnection object at 0x106030ad0>
+2025-05-02 18:36:01,030 [ERROR] websockets.server: connection handler failed
+Traceback (most recent call last):
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/websockets/asyncio/server.py", line 376, in conn_handler
+    await self.handler(connection)
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/server/wsserver.py", line 74, in handle
+    recipient_pk = pairing[sender_pk]
+                   ~~~~~~~^^^^^^^^^^^
+KeyError: '0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266'
+2025-05-02 18:36:02,237 [INFO] websockets.server: server closing
+2025-05-02 18:36:02,237 [INFO] websockets.server: server closed
+2025-05-02 18:44:33,790 [INFO] websockets.server: server listening on 0.0.0.0:8765
+2025-05-02 18:44:36,702 [INFO] websockets.server: connection open
+2025-05-02 18:44:36,703 [INFO] server: identified 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266 with <websockets.asyncio.server.ServerConnection object at 0x110760ad0>
+2025-05-02 18:44:38,803 [INFO] websockets.server: connection open
+2025-05-02 18:44:38,803 [INFO] server: identified 0x70997970C51812dc3A010C7d01b50e0d17dc79C8 with <websockets.asyncio.server.ServerConnection object at 0x110748b90>
+2025-05-02 18:44:38,810 [INFO] server: channel created: d741f25119b42cbf770f0e229c7937cf26ba9a1acad798946456172a5aac617a between 0x70997970C51812dc3A010C7d01b50e0d17dc79C8 and 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+2025-05-02 18:44:41,166 [INFO] server: forwarded from 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266 to 0x70997970C51812dc3A010C7d01b50e0d17dc79C8
+2025-05-02 18:44:41,184 [INFO] server: forwarded from 0x70997970C51812dc3A010C7d01b50e0d17dc79C8 to 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+2025-05-02 18:45:01,179 [INFO] server: forwarded from 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266 to 0x70997970C51812dc3A010C7d01b50e0d17dc79C8
+2025-05-02 18:45:01,187 [INFO] server: forwarded from 0x70997970C51812dc3A010C7d01b50e0d17dc79C8 to 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+2025-05-02 18:45:02,477 [INFO] server: closing channel 0x70997970C51812dc3A010C7d01b50e0d17dc79C8 to 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+2025-05-02 18:45:17,699 [ERROR] websockets.server: connection handler failed
+Traceback (most recent call last):
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/websockets/asyncio/server.py", line 376, in conn_handler
+    await self.handler(connection)
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/server/wsserver.py", line 77, in handle
+    await recipient_ws.send(json.dumps(closemsg))
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/websockets/asyncio/connection.py", line 476, in send
+    async with self.send_context():
+               ~~~~~~~~~~~~~~~~~^^
+  File "/opt/homebrew/Cellar/python@3.13/3.13.3/Frameworks/Python.framework/Versions/3.13/lib/python3.13/contextlib.py", line 214, in __aenter__
+    return await anext(self.gen)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/websockets/asyncio/connection.py", line 957, in send_context
+    raise self.protocol.close_exc from original_exc
+websockets.exceptions.ConnectionClosedOK: received 1000 (OK); then sent 1000 (OK)
+2025-05-02 18:45:18,890 [INFO] websockets.server: server closing
+2025-05-02 18:45:18,891 [INFO] websockets.server: server closed
+2025-05-02 18:45:44,856 [INFO] websockets.server: server listening on 0.0.0.0:8765
+2025-05-02 18:45:47,493 [INFO] websockets.server: connection open
+2025-05-02 18:45:47,493 [INFO] server: identified 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266 with <websockets.asyncio.server.ServerConnection object at 0x105d60ad0>
+2025-05-02 18:45:50,283 [INFO] websockets.server: connection open
+2025-05-02 18:45:50,283 [INFO] server: identified 0x70997970C51812dc3A010C7d01b50e0d17dc79C8 with <websockets.asyncio.server.ServerConnection object at 0x105d48b90>
+2025-05-02 18:45:50,290 [INFO] server: channel created: 8111ee8230c55486bd660527f0485d74a1231edc179a32323a01226b835f35c3 between 0x70997970C51812dc3A010C7d01b50e0d17dc79C8 and 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+2025-05-02 18:45:51,272 [INFO] server: forwarded from 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266 to 0x70997970C51812dc3A010C7d01b50e0d17dc79C8
+2025-05-02 18:45:51,281 [INFO] server: forwarded from 0x70997970C51812dc3A010C7d01b50e0d17dc79C8 to 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+2025-05-02 18:46:11,283 [INFO] server: forwarded from 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266 to 0x70997970C51812dc3A010C7d01b50e0d17dc79C8
+2025-05-02 18:46:11,291 [INFO] server: forwarded from 0x70997970C51812dc3A010C7d01b50e0d17dc79C8 to 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+2025-05-02 18:46:15,487 [INFO] server: closing channel 0x70997970C51812dc3A010C7d01b50e0d17dc79C8 to 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+2025-05-02 18:46:31,130 [ERROR] asyncio: Task exception was never retrieved
+future: <Task finished name='Task-2' coro=<watch_blocks() done, defined at /Users/timurtakhtarov/School/CSCE489/computemarket/offchain/server/block_listener.py:18> exception=ConnectionError(MaxRetryError("HTTPConnectionPool(host='127.0.0.1', port=8545): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x105cf86e0>: Failed to establish a new connection: [Errno 61] Connection refused'))"))>
+Traceback (most recent call last):
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/urllib3/connection.py", line 198, in _new_conn
+    sock = connection.create_connection(
+        (self._dns_host, self.port),
+    ...<2 lines>...
+        socket_options=self.socket_options,
+    )
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+    ~~~~~~~~~~~~^^^^
+ConnectionRefusedError: [Errno 61] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+        conn,
+    ...<10 lines>...
+        **response_kw,
+    )
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/urllib3/connectionpool.py", line 493, in _make_request
+    conn.request(
+    ~~~~~~~~~~~~^
+        method,
+        ^^^^^^^
+    ...<6 lines>...
+        enforce_content_length=enforce_content_length,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/urllib3/connection.py", line 445, in request
+    self.endheaders()
+    ~~~~~~~~~~~~~~~^^
+  File "/opt/homebrew/Cellar/python@3.13/3.13.3/Frameworks/Python.framework/Versions/3.13/lib/python3.13/http/client.py", line 1333, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.13/3.13.3/Frameworks/Python.framework/Versions/3.13/lib/python3.13/http/client.py", line 1093, in _send_output
+    self.send(msg)
+    ~~~~~~~~~^^^^^
+  File "/opt/homebrew/Cellar/python@3.13/3.13.3/Frameworks/Python.framework/Versions/3.13/lib/python3.13/http/client.py", line 1037, in send
+    self.connect()
+    ~~~~~~~~~~~~^^
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/urllib3/connection.py", line 276, in connect
+    self.sock = self._new_conn()
+                ~~~~~~~~~~~~~~^^
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/urllib3/connection.py", line 213, in _new_conn
+    raise NewConnectionError(
+        self, f"Failed to establish a new connection: {e}"
+    ) from e
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x105cf86e0>: Failed to establish a new connection: [Errno 61] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+        method=request.method,
+    ...<9 lines>...
+        chunked=chunked,
+    )
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/urllib3/connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+        method, url, error=new_e, _pool=self, _stacktrace=sys.exc_info()[2]
+    )
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/urllib3/util/retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='127.0.0.1', port=8545): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x105cf86e0>: Failed to establish a new connection: [Errno 61] Connection refused'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/server/block_listener.py", line 22, in watch_blocks
+    for block_hash in block_filter.get_new_entries():
+                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/web3/_utils/filters.py", line 183, in get_new_entries
+    self.eth_module.get_filter_changes(self.filter_id)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/web3/module.py", line 112, in caller
+    result = w3.manager.request_blocking(
+        method_str, params, error_formatters, null_result_formatters
+    )
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/web3/manager.py", line 231, in request_blocking
+    response = self._make_request(method, params)
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/web3/manager.py", line 163, in _make_request
+    return request_func(method, params)
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/web3/middleware/base.py", line 56, in middleware
+    return self.response_processor(method, make_request(method, params))
+                                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/web3/middleware/base.py", line 56, in middleware
+    return self.response_processor(method, make_request(method, params))
+                                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/web3/middleware/base.py", line 56, in middleware
+    return self.response_processor(method, make_request(method, params))
+                                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  [Previous line repeated 2 more times]
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/web3/_utils/caching/caching_utils.py", line 261, in wrapper
+    return func(provider, method, params)
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/web3/providers/rpc/rpc.py", line 169, in make_request
+    raw_response = self._make_request(method, request_data)
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/web3/providers/rpc/rpc.py", line 146, in _make_request
+    return self._request_session_manager.make_post_request(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self.endpoint_uri, request_data, **self.get_request_kwargs()
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/web3/_utils/http_session_manager.py", line 145, in make_post_request
+    with self.get_response_from_post_request(
+         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        endpoint_uri, data=data, **kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ) as response:
+    ^
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/web3/_utils/http_session_manager.py", line 127, in get_response_from_post_request
+    return session.post(endpoint_uri, *args, **kwargs)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/requests/sessions.py", line 637, in post
+    return self.request("POST", url, data=data, json=json, **kwargs)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/requests/adapters.py", line 700, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='127.0.0.1', port=8545): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x105cf86e0>: Failed to establish a new connection: [Errno 61] Connection refused'))
+2025-05-02 18:48:43,376 [INFO] websockets.server: server closing
+2025-05-02 18:48:43,381 [INFO] websockets.server: server closed
+2025-05-02 18:48:44,530 [INFO] websockets.server: server listening on 0.0.0.0:8765
+2025-05-02 18:48:47,212 [INFO] websockets.server: connection open
+2025-05-02 18:48:47,216 [INFO] server: identified 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266 with <websockets.asyncio.server.ServerConnection object at 0x107c60ad0>
+2025-05-02 18:48:49,534 [INFO] websockets.server: connection open
+2025-05-02 18:48:49,535 [INFO] server: identified 0x70997970C51812dc3A010C7d01b50e0d17dc79C8 with <websockets.asyncio.server.ServerConnection object at 0x107c48b90>
+2025-05-02 18:48:49,542 [INFO] server: channel created: fdf3c5f7a852dec7702edd16aed6a181881a06068a59352a8f40d5179e35f6ea between 0x70997970C51812dc3A010C7d01b50e0d17dc79C8 and 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+2025-05-02 18:48:50,601 [INFO] server: forwarded from 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266 to 0x70997970C51812dc3A010C7d01b50e0d17dc79C8
+2025-05-02 18:48:50,609 [INFO] server: forwarded from 0x70997970C51812dc3A010C7d01b50e0d17dc79C8 to 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+2025-05-02 18:48:51,655 [INFO] server: closing channel 0x70997970C51812dc3A010C7d01b50e0d17dc79C8 to 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+2025-05-02 18:50:58,522 [INFO] websockets.server: server closing
+2025-05-02 18:50:58,530 [INFO] websockets.server: server closed
+2025-05-02 18:51:00,189 [INFO] websockets.server: server listening on 0.0.0.0:8765
+2025-05-02 18:51:02,200 [ERROR] asyncio: Task exception was never retrieved
+future: <Task finished name='Task-2' coro=<watch_blocks() done, defined at /Users/timurtakhtarov/School/CSCE489/computemarket/offchain/server/block_listener.py:18> exception=ConnectionError(MaxRetryError("HTTPConnectionPool(host='127.0.0.1', port=8545): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x1062346e0>: Failed to establish a new connection: [Errno 61] Connection refused'))"))>
+Traceback (most recent call last):
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/urllib3/connection.py", line 198, in _new_conn
+    sock = connection.create_connection(
+        (self._dns_host, self.port),
+    ...<2 lines>...
+        socket_options=self.socket_options,
+    )
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+    ~~~~~~~~~~~~^^^^
+ConnectionRefusedError: [Errno 61] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+        conn,
+    ...<10 lines>...
+        **response_kw,
+    )
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/urllib3/connectionpool.py", line 493, in _make_request
+    conn.request(
+    ~~~~~~~~~~~~^
+        method,
+        ^^^^^^^
+    ...<6 lines>...
+        enforce_content_length=enforce_content_length,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/urllib3/connection.py", line 445, in request
+    self.endheaders()
+    ~~~~~~~~~~~~~~~^^
+  File "/opt/homebrew/Cellar/python@3.13/3.13.3/Frameworks/Python.framework/Versions/3.13/lib/python3.13/http/client.py", line 1333, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.13/3.13.3/Frameworks/Python.framework/Versions/3.13/lib/python3.13/http/client.py", line 1093, in _send_output
+    self.send(msg)
+    ~~~~~~~~~^^^^^
+  File "/opt/homebrew/Cellar/python@3.13/3.13.3/Frameworks/Python.framework/Versions/3.13/lib/python3.13/http/client.py", line 1037, in send
+    self.connect()
+    ~~~~~~~~~~~~^^
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/urllib3/connection.py", line 276, in connect
+    self.sock = self._new_conn()
+                ~~~~~~~~~~~~~~^^
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/urllib3/connection.py", line 213, in _new_conn
+    raise NewConnectionError(
+        self, f"Failed to establish a new connection: {e}"
+    ) from e
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x1062346e0>: Failed to establish a new connection: [Errno 61] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+        method=request.method,
+    ...<9 lines>...
+        chunked=chunked,
+    )
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/urllib3/connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+        method, url, error=new_e, _pool=self, _stacktrace=sys.exc_info()[2]
+    )
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/urllib3/util/retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='127.0.0.1', port=8545): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x1062346e0>: Failed to establish a new connection: [Errno 61] Connection refused'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/server/block_listener.py", line 22, in watch_blocks
+    for block_hash in block_filter.get_new_entries():
+                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/web3/_utils/filters.py", line 183, in get_new_entries
+    self.eth_module.get_filter_changes(self.filter_id)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/web3/module.py", line 112, in caller
+    result = w3.manager.request_blocking(
+        method_str, params, error_formatters, null_result_formatters
+    )
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/web3/manager.py", line 231, in request_blocking
+    response = self._make_request(method, params)
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/web3/manager.py", line 163, in _make_request
+    return request_func(method, params)
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/web3/middleware/base.py", line 56, in middleware
+    return self.response_processor(method, make_request(method, params))
+                                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/web3/middleware/base.py", line 56, in middleware
+    return self.response_processor(method, make_request(method, params))
+                                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/web3/middleware/base.py", line 56, in middleware
+    return self.response_processor(method, make_request(method, params))
+                                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  [Previous line repeated 2 more times]
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/web3/_utils/caching/caching_utils.py", line 261, in wrapper
+    return func(provider, method, params)
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/web3/providers/rpc/rpc.py", line 169, in make_request
+    raw_response = self._make_request(method, request_data)
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/web3/providers/rpc/rpc.py", line 146, in _make_request
+    return self._request_session_manager.make_post_request(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self.endpoint_uri, request_data, **self.get_request_kwargs()
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/web3/_utils/http_session_manager.py", line 145, in make_post_request
+    with self.get_response_from_post_request(
+         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        endpoint_uri, data=data, **kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ) as response:
+    ^
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/web3/_utils/http_session_manager.py", line 127, in get_response_from_post_request
+    return session.post(endpoint_uri, *args, **kwargs)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/requests/sessions.py", line 637, in post
+    return self.request("POST", url, data=data, json=json, **kwargs)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/requests/adapters.py", line 700, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='127.0.0.1', port=8545): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x1062346e0>: Failed to establish a new connection: [Errno 61] Connection refused'))
+2025-05-02 18:51:09,587 [INFO] websockets.server: server closing
+2025-05-02 18:51:09,588 [INFO] websockets.server: server closed
+2025-05-02 18:51:10,512 [INFO] websockets.server: server listening on 0.0.0.0:8765
+2025-05-02 18:51:14,550 [INFO] websockets.server: connection open
+2025-05-02 18:51:14,550 [INFO] server: identified 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266 with <websockets.asyncio.server.ServerConnection object at 0x103b88ad0>
+2025-05-02 18:51:16,380 [INFO] websockets.server: connection open
+2025-05-02 18:51:16,381 [INFO] server: identified 0x70997970C51812dc3A010C7d01b50e0d17dc79C8 with <websockets.asyncio.server.ServerConnection object at 0x103b70b90>
+2025-05-02 18:51:16,388 [INFO] server: channel created: 19adc5be04695770be55ea2be8c3ff0f88e24ce5f290cd35316b6f24f67a108a between 0x70997970C51812dc3A010C7d01b50e0d17dc79C8 and 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+2025-05-02 18:51:17,387 [INFO] server: forwarded from 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266 to 0x70997970C51812dc3A010C7d01b50e0d17dc79C8
+2025-05-02 18:51:17,397 [INFO] server: forwarded from 0x70997970C51812dc3A010C7d01b50e0d17dc79C8 to 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+2025-05-02 18:51:18,482 [INFO] server: closing channel 0x70997970C51812dc3A010C7d01b50e0d17dc79C8 to 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+2025-05-02 18:51:30,571 [INFO] websockets.server: server closing
+2025-05-02 18:51:30,573 [INFO] websockets.server: server closed
+2025-05-02 18:52:15,604 [INFO] websockets.server: server listening on 0.0.0.0:8765
+2025-05-02 18:52:17,308 [INFO] websockets.server: connection open
+2025-05-02 18:52:17,309 [INFO] server: identified 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266 with <websockets.asyncio.server.ServerConnection object at 0x103d8cad0>
+2025-05-02 18:52:20,334 [INFO] websockets.server: connection open
+2025-05-02 18:52:20,335 [INFO] server: identified 0x70997970C51812dc3A010C7d01b50e0d17dc79C8 with <websockets.asyncio.server.ServerConnection object at 0x103d74b90>
+2025-05-02 18:52:20,341 [INFO] server: channel created: 25224c83da4e485dce209a77cd1120f382a8c30ef1e4866ffca2459c22c17f14 between 0x70997970C51812dc3A010C7d01b50e0d17dc79C8 and 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+2025-05-02 18:52:21,277 [INFO] server: forwarded from 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266 to 0x70997970C51812dc3A010C7d01b50e0d17dc79C8
+2025-05-02 18:52:21,287 [INFO] server: forwarded from 0x70997970C51812dc3A010C7d01b50e0d17dc79C8 to 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+2025-05-02 18:52:23,111 [INFO] server: closing channel 0x70997970C51812dc3A010C7d01b50e0d17dc79C8 to 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+2025-05-02 18:53:06,915 [ERROR] asyncio: Task exception was never retrieved
+future: <Task finished name='Task-2' coro=<watch_blocks() done, defined at /Users/timurtakhtarov/School/CSCE489/computemarket/offchain/server/block_listener.py:18> exception=ConnectionError(MaxRetryError("HTTPConnectionPool(host='127.0.0.1', port=8545): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x103d246e0>: Failed to establish a new connection: [Errno 61] Connection refused'))"))>
+Traceback (most recent call last):
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/urllib3/connection.py", line 198, in _new_conn
+    sock = connection.create_connection(
+        (self._dns_host, self.port),
+    ...<2 lines>...
+        socket_options=self.socket_options,
+    )
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+    ~~~~~~~~~~~~^^^^
+ConnectionRefusedError: [Errno 61] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+        conn,
+    ...<10 lines>...
+        **response_kw,
+    )
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/urllib3/connectionpool.py", line 493, in _make_request
+    conn.request(
+    ~~~~~~~~~~~~^
+        method,
+        ^^^^^^^
+    ...<6 lines>...
+        enforce_content_length=enforce_content_length,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/urllib3/connection.py", line 445, in request
+    self.endheaders()
+    ~~~~~~~~~~~~~~~^^
+  File "/opt/homebrew/Cellar/python@3.13/3.13.3/Frameworks/Python.framework/Versions/3.13/lib/python3.13/http/client.py", line 1333, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.13/3.13.3/Frameworks/Python.framework/Versions/3.13/lib/python3.13/http/client.py", line 1093, in _send_output
+    self.send(msg)
+    ~~~~~~~~~^^^^^
+  File "/opt/homebrew/Cellar/python@3.13/3.13.3/Frameworks/Python.framework/Versions/3.13/lib/python3.13/http/client.py", line 1037, in send
+    self.connect()
+    ~~~~~~~~~~~~^^
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/urllib3/connection.py", line 276, in connect
+    self.sock = self._new_conn()
+                ~~~~~~~~~~~~~~^^
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/urllib3/connection.py", line 213, in _new_conn
+    raise NewConnectionError(
+        self, f"Failed to establish a new connection: {e}"
+    ) from e
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x103d246e0>: Failed to establish a new connection: [Errno 61] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+        method=request.method,
+    ...<9 lines>...
+        chunked=chunked,
+    )
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/urllib3/connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+        method, url, error=new_e, _pool=self, _stacktrace=sys.exc_info()[2]
+    )
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/urllib3/util/retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='127.0.0.1', port=8545): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x103d246e0>: Failed to establish a new connection: [Errno 61] Connection refused'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/server/block_listener.py", line 22, in watch_blocks
+    for block_hash in block_filter.get_new_entries():
+                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/web3/_utils/filters.py", line 183, in get_new_entries
+    self.eth_module.get_filter_changes(self.filter_id)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/web3/module.py", line 112, in caller
+    result = w3.manager.request_blocking(
+        method_str, params, error_formatters, null_result_formatters
+    )
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/web3/manager.py", line 231, in request_blocking
+    response = self._make_request(method, params)
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/web3/manager.py", line 163, in _make_request
+    return request_func(method, params)
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/web3/middleware/base.py", line 56, in middleware
+    return self.response_processor(method, make_request(method, params))
+                                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/web3/middleware/base.py", line 56, in middleware
+    return self.response_processor(method, make_request(method, params))
+                                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/web3/middleware/base.py", line 56, in middleware
+    return self.response_processor(method, make_request(method, params))
+                                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  [Previous line repeated 2 more times]
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/web3/_utils/caching/caching_utils.py", line 261, in wrapper
+    return func(provider, method, params)
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/web3/providers/rpc/rpc.py", line 169, in make_request
+    raw_response = self._make_request(method, request_data)
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/web3/providers/rpc/rpc.py", line 146, in _make_request
+    return self._request_session_manager.make_post_request(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self.endpoint_uri, request_data, **self.get_request_kwargs()
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/web3/_utils/http_session_manager.py", line 145, in make_post_request
+    with self.get_response_from_post_request(
+         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        endpoint_uri, data=data, **kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ) as response:
+    ^
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/web3/_utils/http_session_manager.py", line 127, in get_response_from_post_request
+    return session.post(endpoint_uri, *args, **kwargs)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/requests/sessions.py", line 637, in post
+    return self.request("POST", url, data=data, json=json, **kwargs)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/requests/adapters.py", line 700, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='127.0.0.1', port=8545): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x103d246e0>: Failed to establish a new connection: [Errno 61] Connection refused'))
+2025-05-02 18:53:16,277 [INFO] websockets.server: server closing
+2025-05-02 18:53:16,280 [INFO] websockets.server: server closed
+2025-05-02 18:53:17,179 [INFO] websockets.server: server listening on 0.0.0.0:8765
+2025-05-02 18:53:18,914 [INFO] websockets.server: connection open
+2025-05-02 18:53:18,914 [INFO] server: identified 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266 with <websockets.asyncio.server.ServerConnection object at 0x1055d4ad0>
+2025-05-02 18:53:23,650 [INFO] websockets.server: connection open
+2025-05-02 18:53:23,651 [INFO] server: identified 0x70997970C51812dc3A010C7d01b50e0d17dc79C8 with <websockets.asyncio.server.ServerConnection object at 0x1055bcb90>
+2025-05-02 18:53:23,658 [INFO] server: channel created: 8262651ffd242ecb5046c5dbfedcbf1cb5e6b254e84559e22806f9c289c91e0f between 0x70997970C51812dc3A010C7d01b50e0d17dc79C8 and 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+2025-05-02 18:53:24,579 [INFO] server: forwarded from 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266 to 0x70997970C51812dc3A010C7d01b50e0d17dc79C8
+2025-05-02 18:53:24,589 [INFO] server: forwarded from 0x70997970C51812dc3A010C7d01b50e0d17dc79C8 to 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+2025-05-02 18:53:27,027 [INFO] server: closing channel 0x70997970C51812dc3A010C7d01b50e0d17dc79C8 to 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+2025-05-02 18:53:53,487 [INFO] websockets.server: server closing
+2025-05-02 18:53:53,497 [INFO] websockets.server: server closed
+2025-05-02 18:54:03,562 [INFO] websockets.server: server listening on 0.0.0.0:8765
+2025-05-02 18:54:05,697 [INFO] websockets.server: connection open
+2025-05-02 18:54:05,697 [INFO] server: identified 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266 with <websockets.asyncio.server.ServerConnection object at 0x1062d4ad0>
+2025-05-02 18:54:08,355 [INFO] websockets.server: connection open
+2025-05-02 18:54:08,356 [INFO] server: identified 0x70997970C51812dc3A010C7d01b50e0d17dc79C8 with <websockets.asyncio.server.ServerConnection object at 0x1062bcb90>
+2025-05-02 18:54:08,362 [INFO] server: channel created: f8d7c76b95f359310e19d40ddf9ba24656e1217879b65177952a555e99c803ba between 0x70997970C51812dc3A010C7d01b50e0d17dc79C8 and 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+2025-05-02 18:54:09,268 [INFO] server: forwarded from 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266 to 0x70997970C51812dc3A010C7d01b50e0d17dc79C8
+2025-05-02 18:54:09,277 [INFO] server: forwarded from 0x70997970C51812dc3A010C7d01b50e0d17dc79C8 to 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+2025-05-02 18:54:11,767 [INFO] server: closing channel 0x70997970C51812dc3A010C7d01b50e0d17dc79C8 to 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+2025-05-02 18:56:09,347 [ERROR] asyncio: Task exception was never retrieved
+future: <Task finished name='Task-2' coro=<watch_blocks() done, defined at /Users/timurtakhtarov/School/CSCE489/computemarket/offchain/server/block_listener.py:18> exception=ConnectionError(MaxRetryError("HTTPConnectionPool(host='127.0.0.1', port=8545): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x10626c6e0>: Failed to establish a new connection: [Errno 61] Connection refused'))"))>
+Traceback (most recent call last):
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/urllib3/connection.py", line 198, in _new_conn
+    sock = connection.create_connection(
+        (self._dns_host, self.port),
+    ...<2 lines>...
+        socket_options=self.socket_options,
+    )
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+    ~~~~~~~~~~~~^^^^
+ConnectionRefusedError: [Errno 61] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+        conn,
+    ...<10 lines>...
+        **response_kw,
+    )
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/urllib3/connectionpool.py", line 493, in _make_request
+    conn.request(
+    ~~~~~~~~~~~~^
+        method,
+        ^^^^^^^
+    ...<6 lines>...
+        enforce_content_length=enforce_content_length,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/urllib3/connection.py", line 445, in request
+    self.endheaders()
+    ~~~~~~~~~~~~~~~^^
+  File "/opt/homebrew/Cellar/python@3.13/3.13.3/Frameworks/Python.framework/Versions/3.13/lib/python3.13/http/client.py", line 1333, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.13/3.13.3/Frameworks/Python.framework/Versions/3.13/lib/python3.13/http/client.py", line 1093, in _send_output
+    self.send(msg)
+    ~~~~~~~~~^^^^^
+  File "/opt/homebrew/Cellar/python@3.13/3.13.3/Frameworks/Python.framework/Versions/3.13/lib/python3.13/http/client.py", line 1037, in send
+    self.connect()
+    ~~~~~~~~~~~~^^
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/urllib3/connection.py", line 276, in connect
+    self.sock = self._new_conn()
+                ~~~~~~~~~~~~~~^^
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/urllib3/connection.py", line 213, in _new_conn
+    raise NewConnectionError(
+        self, f"Failed to establish a new connection: {e}"
+    ) from e
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x10626c6e0>: Failed to establish a new connection: [Errno 61] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+        method=request.method,
+    ...<9 lines>...
+        chunked=chunked,
+    )
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/urllib3/connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+        method, url, error=new_e, _pool=self, _stacktrace=sys.exc_info()[2]
+    )
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/urllib3/util/retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='127.0.0.1', port=8545): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x10626c6e0>: Failed to establish a new connection: [Errno 61] Connection refused'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/server/block_listener.py", line 22, in watch_blocks
+    for block_hash in block_filter.get_new_entries():
+                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/web3/_utils/filters.py", line 183, in get_new_entries
+    self.eth_module.get_filter_changes(self.filter_id)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/web3/module.py", line 112, in caller
+    result = w3.manager.request_blocking(
+        method_str, params, error_formatters, null_result_formatters
+    )
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/web3/manager.py", line 231, in request_blocking
+    response = self._make_request(method, params)
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/web3/manager.py", line 163, in _make_request
+    return request_func(method, params)
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/web3/middleware/base.py", line 56, in middleware
+    return self.response_processor(method, make_request(method, params))
+                                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/web3/middleware/base.py", line 56, in middleware
+    return self.response_processor(method, make_request(method, params))
+                                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/web3/middleware/base.py", line 56, in middleware
+    return self.response_processor(method, make_request(method, params))
+                                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  [Previous line repeated 2 more times]
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/web3/_utils/caching/caching_utils.py", line 261, in wrapper
+    return func(provider, method, params)
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/web3/providers/rpc/rpc.py", line 169, in make_request
+    raw_response = self._make_request(method, request_data)
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/web3/providers/rpc/rpc.py", line 146, in _make_request
+    return self._request_session_manager.make_post_request(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self.endpoint_uri, request_data, **self.get_request_kwargs()
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/web3/_utils/http_session_manager.py", line 145, in make_post_request
+    with self.get_response_from_post_request(
+         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        endpoint_uri, data=data, **kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ) as response:
+    ^
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/web3/_utils/http_session_manager.py", line 127, in get_response_from_post_request
+    return session.post(endpoint_uri, *args, **kwargs)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/requests/sessions.py", line 637, in post
+    return self.request("POST", url, data=data, json=json, **kwargs)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/requests/adapters.py", line 700, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='127.0.0.1', port=8545): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x10626c6e0>: Failed to establish a new connection: [Errno 61] Connection refused'))
+2025-05-02 19:09:10,384 [INFO] websockets.server: server closing
+2025-05-02 19:09:10,390 [INFO] websockets.server: server closed
+2025-05-02 19:09:20,486 [INFO] websockets.server: server listening on 0.0.0.0:8765
+2025-05-02 19:09:24,572 [INFO] websockets.server: connection open
+2025-05-02 19:09:24,572 [INFO] server: identified 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266 with <websockets.asyncio.server.ServerConnection object at 0x107c34ad0>
+2025-05-02 19:09:28,871 [ERROR] websockets.server: connection handler failed
+Traceback (most recent call last):
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/websockets/asyncio/server.py", line 376, in conn_handler
+    await self.handler(connection)
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/server/wsserver.py", line 74, in handle
+    recipient_pk = pairing[sender_pk]
+                   ~~~~~~~^^^^^^^^^^^
+KeyError: '0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266'
+2025-05-02 19:09:32,724 [INFO] websockets.server: connection open
+2025-05-02 19:09:32,725 [INFO] server: identified 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266 with <websockets.asyncio.server.ServerConnection object at 0x107c1ca50>
+2025-05-02 19:09:35,035 [INFO] websockets.server: connection open
+2025-05-02 19:09:35,035 [INFO] server: identified 0x70997970C51812dc3A010C7d01b50e0d17dc79C8 with <websockets.asyncio.server.ServerConnection object at 0x107c1d6d0>
+2025-05-02 19:09:35,043 [INFO] server: channel created: b60592ab6d48d2d64194275438d9ac92a40792a78bffdd5c26260920f12f8129 between 0x70997970C51812dc3A010C7d01b50e0d17dc79C8 and 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+2025-05-02 19:09:36,266 [INFO] server: forwarded from 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266 to 0x70997970C51812dc3A010C7d01b50e0d17dc79C8
+2025-05-02 19:09:36,276 [INFO] server: forwarded from 0x70997970C51812dc3A010C7d01b50e0d17dc79C8 to 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+2025-05-02 19:09:38,056 [INFO] server: closing channel 0x70997970C51812dc3A010C7d01b50e0d17dc79C8 to 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+2025-05-02 19:14:44,534 [INFO] websockets.server: server closing
+2025-05-02 19:14:44,540 [INFO] websockets.server: server closed
+2025-05-02 19:14:46,662 [INFO] websockets.server: server listening on 0.0.0.0:8765
+2025-05-02 19:14:51,175 [ERROR] asyncio: Task exception was never retrieved
+future: <Task finished name='Task-2' coro=<watch_blocks() done, defined at /Users/timurtakhtarov/School/CSCE489/computemarket/offchain/server/wsserver.py:35> exception=ConnectionError(MaxRetryError("HTTPConnectionPool(host='127.0.0.1', port=8545): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x105f50830>: Failed to establish a new connection: [Errno 61] Connection refused'))"))>
+Traceback (most recent call last):
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/urllib3/connection.py", line 198, in _new_conn
+    sock = connection.create_connection(
+        (self._dns_host, self.port),
+    ...<2 lines>...
+        socket_options=self.socket_options,
+    )
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+    ~~~~~~~~~~~~^^^^
+ConnectionRefusedError: [Errno 61] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+        conn,
+    ...<10 lines>...
+        **response_kw,
+    )
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/urllib3/connectionpool.py", line 493, in _make_request
+    conn.request(
+    ~~~~~~~~~~~~^
+        method,
+        ^^^^^^^
+    ...<6 lines>...
+        enforce_content_length=enforce_content_length,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/urllib3/connection.py", line 445, in request
+    self.endheaders()
+    ~~~~~~~~~~~~~~~^^
+  File "/opt/homebrew/Cellar/python@3.13/3.13.3/Frameworks/Python.framework/Versions/3.13/lib/python3.13/http/client.py", line 1333, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.13/3.13.3/Frameworks/Python.framework/Versions/3.13/lib/python3.13/http/client.py", line 1093, in _send_output
+    self.send(msg)
+    ~~~~~~~~~^^^^^
+  File "/opt/homebrew/Cellar/python@3.13/3.13.3/Frameworks/Python.framework/Versions/3.13/lib/python3.13/http/client.py", line 1037, in send
+    self.connect()
+    ~~~~~~~~~~~~^^
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/urllib3/connection.py", line 276, in connect
+    self.sock = self._new_conn()
+                ~~~~~~~~~~~~~~^^
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/urllib3/connection.py", line 213, in _new_conn
+    raise NewConnectionError(
+        self, f"Failed to establish a new connection: {e}"
+    ) from e
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x105f50830>: Failed to establish a new connection: [Errno 61] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+        method=request.method,
+    ...<9 lines>...
+        chunked=chunked,
+    )
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/urllib3/connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+        method, url, error=new_e, _pool=self, _stacktrace=sys.exc_info()[2]
+    )
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/urllib3/util/retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='127.0.0.1', port=8545): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x105f50830>: Failed to establish a new connection: [Errno 61] Connection refused'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/server/wsserver.py", line 38, in watch_blocks
+    current_block = provider.eth.block_number
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/web3/eth/eth.py", line 144, in block_number
+    return self.get_block_number()
+           ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/web3/module.py", line 112, in caller
+    result = w3.manager.request_blocking(
+        method_str, params, error_formatters, null_result_formatters
+    )
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/web3/manager.py", line 231, in request_blocking
+    response = self._make_request(method, params)
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/web3/manager.py", line 163, in _make_request
+    return request_func(method, params)
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/web3/middleware/base.py", line 56, in middleware
+    return self.response_processor(method, make_request(method, params))
+                                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/web3/middleware/base.py", line 56, in middleware
+    return self.response_processor(method, make_request(method, params))
+                                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/web3/middleware/base.py", line 56, in middleware
+    return self.response_processor(method, make_request(method, params))
+                                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  [Previous line repeated 2 more times]
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/web3/_utils/caching/caching_utils.py", line 261, in wrapper
+    return func(provider, method, params)
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/web3/providers/rpc/rpc.py", line 169, in make_request
+    raw_response = self._make_request(method, request_data)
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/web3/providers/rpc/rpc.py", line 146, in _make_request
+    return self._request_session_manager.make_post_request(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self.endpoint_uri, request_data, **self.get_request_kwargs()
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/web3/_utils/http_session_manager.py", line 145, in make_post_request
+    with self.get_response_from_post_request(
+         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        endpoint_uri, data=data, **kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ) as response:
+    ^
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/web3/_utils/http_session_manager.py", line 127, in get_response_from_post_request
+    return session.post(endpoint_uri, *args, **kwargs)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/requests/sessions.py", line 637, in post
+    return self.request("POST", url, data=data, json=json, **kwargs)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/Users/timurtakhtarov/School/CSCE489/computemarket/offchain/venv/lib/python3.13/site-packages/requests/adapters.py", line 700, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='127.0.0.1', port=8545): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x105f50830>: Failed to establish a new connection: [Errno 61] Connection refused'))
+2025-05-02 19:14:59,006 [INFO] websockets.server: connection open
+2025-05-02 19:14:59,007 [INFO] server: identified 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266 with <websockets.asyncio.server.ServerConnection object at 0x105f7a510>
+2025-05-02 19:15:01,915 [INFO] websockets.server: connection open
+2025-05-02 19:15:01,915 [INFO] server: identified 0x70997970C51812dc3A010C7d01b50e0d17dc79C8 with <websockets.asyncio.server.ServerConnection object at 0x105f56490>
+2025-05-02 19:15:01,922 [INFO] server: channel created: f2f5ee1303233788f196f6f13180fca341233f7233645a33917ddd89eb11c2d9 between 0x70997970C51812dc3A010C7d01b50e0d17dc79C8 and 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+2025-05-02 19:15:03,014 [INFO] server: forwarded from 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266 to 0x70997970C51812dc3A010C7d01b50e0d17dc79C8
+2025-05-02 19:15:03,025 [INFO] server: forwarded from 0x70997970C51812dc3A010C7d01b50e0d17dc79C8 to 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+2025-05-02 19:15:11,160 [ERROR] server: failed to fetch expiration block: list indices must be integers or slices, not str
+2025-05-02 19:15:11,160 [INFO] server: closing channel 0x70997970C51812dc3A010C7d01b50e0d17dc79C8 to 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+2025-05-02 19:16:13,889 [INFO] websockets.server: server closing
+2025-05-02 19:16:13,892 [INFO] websockets.server: server closed
+2025-05-02 19:17:43,344 [INFO] websockets.server: server listening on 0.0.0.0:8765
+2025-05-02 19:17:47,182 [INFO] websockets.server: connection open
+2025-05-02 19:17:47,182 [INFO] server: identified 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266 with <websockets.asyncio.server.ServerConnection object at 0x108242120>
+2025-05-02 19:17:53,983 [INFO] websockets.server: connection open
+2025-05-02 19:17:53,983 [INFO] server: identified 0x70997970C51812dc3A010C7d01b50e0d17dc79C8 with <websockets.asyncio.server.ServerConnection object at 0x108219f90>
+2025-05-02 19:17:53,990 [INFO] server: channel created: 3dd9d72a9250a1424c56b70b2c6f6e24f4343dfce1cac28d7cb5cb6535a84507 between 0x70997970C51812dc3A010C7d01b50e0d17dc79C8 and 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+2025-05-02 19:17:55,008 [INFO] server: forwarded from 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266 to 0x70997970C51812dc3A010C7d01b50e0d17dc79C8
+2025-05-02 19:17:55,013 [INFO] server: forwarded from 0x70997970C51812dc3A010C7d01b50e0d17dc79C8 to 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+2025-05-02 19:17:55,393 [INFO] server: block 2 mined
+2025-05-02 19:17:59,380 [INFO] server: closing channel 0x70997970C51812dc3A010C7d01b50e0d17dc79C8 to 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+2025-05-02 19:17:59,385 [INFO] server: registered 3dd9d72a9250a1424c56b70b2c6f6e24f4343dfce1cac28d7cb5cb6535a84507 expiring at block 6
+2025-05-02 19:17:59,913 [INFO] server: block 4 mined
+2025-05-02 19:18:07,440 [INFO] server: block 7 mined
+2025-05-02 19:18:07,457 [ERROR] server: failed to close channel 3dd9d72a9250a1424c56b70b2c6f6e24f4343dfce1cac28d7cb5cb6535a84507: {'code': -32603, 'message': "Error: VM Exception while processing transaction: reverted with reason string 'insufficient funds.'", 'data': {'message': "Error: VM Exception while processing transaction: reverted with reason string 'insufficient funds.'", 'txHash': '0x6bd9577b23cb543e171ceaa8ecbd83b0732da2df3059d2f14be02da3bbd89560', 'data': '0x08c379a000000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000013696e73756666696369656e742066756e64732e00000000000000000000000000'}}
+2025-05-02 19:18:08,963 [INFO] server: block 8 mined
+2025-05-02 19:18:08,978 [ERROR] server: failed to close channel 3dd9d72a9250a1424c56b70b2c6f6e24f4343dfce1cac28d7cb5cb6535a84507: {'code': -32603, 'message': "Error: VM Exception while processing transaction: reverted with reason string 'insufficient funds.'", 'data': {'message': "Error: VM Exception while processing transaction: reverted with reason string 'insufficient funds.'", 'txHash': '0xea6bfd9aa9dc3f6e1fabd220ad0851fd3ebdd32c12ced8e3a54f9fc2bca3ca54', 'data': '0x08c379a000000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000013696e73756666696369656e742066756e64732e00000000000000000000000000'}}
+2025-05-02 19:18:10,484 [INFO] server: block 9 mined
+2025-05-02 19:18:10,500 [ERROR] server: failed to close channel 3dd9d72a9250a1424c56b70b2c6f6e24f4343dfce1cac28d7cb5cb6535a84507: {'code': -32603, 'message': "Error: VM Exception while processing transaction: reverted with reason string 'insufficient funds.'", 'data': {'message': "Error: VM Exception while processing transaction: reverted with reason string 'insufficient funds.'", 'txHash': '0x0c904a414a3ca2adfc5091cffa5d724224730ef6479a1f83c4b56216d0526357', 'data': '0x08c379a000000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000013696e73756666696369656e742066756e64732e00000000000000000000000000'}}
+2025-05-02 19:18:12,007 [INFO] server: block 10 mined
+2025-05-02 19:18:12,022 [ERROR] server: failed to close channel 3dd9d72a9250a1424c56b70b2c6f6e24f4343dfce1cac28d7cb5cb6535a84507: {'code': -32603, 'message': "Error: VM Exception while processing transaction: reverted with reason string 'insufficient funds.'", 'data': {'message': "Error: VM Exception while processing transaction: reverted with reason string 'insufficient funds.'", 'txHash': '0x02f5ec8b61721084f52721fdfb895c82c09b343dd16881e1c5f110a02d5c91d1', 'data': '0x08c379a000000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000013696e73756666696369656e742066756e64732e00000000000000000000000000'}}
+2025-05-02 19:18:13,529 [INFO] server: block 11 mined
+2025-05-02 19:18:13,544 [ERROR] server: failed to close channel 3dd9d72a9250a1424c56b70b2c6f6e24f4343dfce1cac28d7cb5cb6535a84507: {'code': -32603, 'message': "Error: VM Exception while processing transaction: reverted with reason string 'insufficient funds.'", 'data': {'message': "Error: VM Exception while processing transaction: reverted with reason string 'insufficient funds.'", 'txHash': '0x7dfd860a2fc81e637981a32c5466e12b9a0cef5ccd0218fa2c1c20ee5769fdd6', 'data': '0x08c379a000000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000013696e73756666696369656e742066756e64732e00000000000000000000000000'}}
+2025-05-02 19:18:15,050 [INFO] server: block 12 mined
+2025-05-02 19:18:15,066 [ERROR] server: failed to close channel 3dd9d72a9250a1424c56b70b2c6f6e24f4343dfce1cac28d7cb5cb6535a84507: {'code': -32603, 'message': "Error: VM Exception while processing transaction: reverted with reason string 'insufficient funds.'", 'data': {'message': "Error: VM Exception while processing transaction: reverted with reason string 'insufficient funds.'", 'txHash': '0x881f94257864abbe2a83e47f89c351eb2be845de952a9d5b65e751f749adea87', 'data': '0x08c379a000000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000013696e73756666696369656e742066756e64732e00000000000000000000000000'}}
+2025-05-02 19:18:16,573 [INFO] server: block 13 mined
+2025-05-02 19:18:16,589 [ERROR] server: failed to close channel 3dd9d72a9250a1424c56b70b2c6f6e24f4343dfce1cac28d7cb5cb6535a84507: {'code': -32603, 'message': "Error: VM Exception while processing transaction: reverted with reason string 'insufficient funds.'", 'data': {'message': "Error: VM Exception while processing transaction: reverted with reason string 'insufficient funds.'", 'txHash': '0xd1bf3ef4f3d1a6e972531c892e10d99f250199ac0ccd031ded9fb7a220cf0eb8', 'data': '0x08c379a000000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000013696e73756666696369656e742066756e64732e00000000000000000000000000'}}
+2025-05-02 19:18:18,095 [INFO] server: block 14 mined
+2025-05-02 19:18:18,110 [ERROR] server: failed to close channel 3dd9d72a9250a1424c56b70b2c6f6e24f4343dfce1cac28d7cb5cb6535a84507: {'code': -32603, 'message': "Error: VM Exception while processing transaction: reverted with reason string 'insufficient funds.'", 'data': {'message': "Error: VM Exception while processing transaction: reverted with reason string 'insufficient funds.'", 'txHash': '0xeba3b1fa9ff0c373dbac0886afc15e6a67b52ca0cc4427b83cbc6aa7626bedcb', 'data': '0x08c379a000000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000013696e73756666696369656e742066756e64732e00000000000000000000000000'}}
+2025-05-02 19:18:19,616 [INFO] server: block 15 mined
+2025-05-02 19:18:19,629 [ERROR] server: failed to close channel 3dd9d72a9250a1424c56b70b2c6f6e24f4343dfce1cac28d7cb5cb6535a84507: {'code': -32603, 'message': "Error: VM Exception while processing transaction: reverted with reason string 'insufficient funds.'", 'data': {'message': "Error: VM Exception while processing transaction: reverted with reason string 'insufficient funds.'", 'txHash': '0xe2584769ff54c997d1240af3d3d9de454e2d98de3da0d82da0b4e7c17c404be1', 'data': '0x08c379a000000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000013696e73756666696369656e742066756e64732e00000000000000000000000000'}}
+2025-05-02 19:18:21,135 [INFO] server: block 16 mined
+2025-05-02 19:18:21,150 [ERROR] server: failed to close channel 3dd9d72a9250a1424c56b70b2c6f6e24f4343dfce1cac28d7cb5cb6535a84507: {'code': -32603, 'message': "Error: VM Exception while processing transaction: reverted with reason string 'insufficient funds.'", 'data': {'message': "Error: VM Exception while processing transaction: reverted with reason string 'insufficient funds.'", 'txHash': '0x51557683043ed84499db45a16fc05755340c169430de27788f6e4430cefc730a', 'data': '0x08c379a000000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000013696e73756666696369656e742066756e64732e00000000000000000000000000'}}
+2025-05-02 19:18:22,657 [INFO] server: block 17 mined
+2025-05-02 19:18:22,669 [ERROR] server: failed to close channel 3dd9d72a9250a1424c56b70b2c6f6e24f4343dfce1cac28d7cb5cb6535a84507: {'code': -32603, 'message': "Error: VM Exception while processing transaction: reverted with reason string 'insufficient funds.'", 'data': {'message': "Error: VM Exception while processing transaction: reverted with reason string 'insufficient funds.'", 'txHash': '0xeae336eb1ee5bdcbb6de8d933711743ed6e2bf53b8c943ef4d6c2f8c55004cfa', 'data': '0x08c379a000000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000013696e73756666696369656e742066756e64732e00000000000000000000000000'}}
+2025-05-02 19:18:24,176 [INFO] server: block 18 mined
+2025-05-02 19:18:24,190 [ERROR] server: failed to close channel 3dd9d72a9250a1424c56b70b2c6f6e24f4343dfce1cac28d7cb5cb6535a84507: {'code': -32603, 'message': "Error: VM Exception while processing transaction: reverted with reason string 'insufficient funds.'", 'data': {'message': "Error: VM Exception while processing transaction: reverted with reason string 'insufficient funds.'", 'txHash': '0xa182da580fb2d5ec7cc34d0391e78fddc247054f970fb901ec13d95daae5c6eb', 'data': '0x08c379a000000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000013696e73756666696369656e742066756e64732e00000000000000000000000000'}}
+2025-05-02 19:18:25,696 [INFO] server: block 19 mined
+2025-05-02 19:18:25,710 [ERROR] server: failed to close channel 3dd9d72a9250a1424c56b70b2c6f6e24f4343dfce1cac28d7cb5cb6535a84507: {'code': -32603, 'message': "Error: VM Exception while processing transaction: reverted with reason string 'insufficient funds.'", 'data': {'message': "Error: VM Exception while processing transaction: reverted with reason string 'insufficient funds.'", 'txHash': '0x760cb3e52367554c2a89b785499c95d60bdf04825eb46ac7908c0501cdc08fb3', 'data': '0x08c379a000000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000013696e73756666696369656e742066756e64732e00000000000000000000000000'}}
+2025-05-02 19:18:27,217 [INFO] server: block 20 mined
+2025-05-02 19:18:27,232 [ERROR] server: failed to close channel 3dd9d72a9250a1424c56b70b2c6f6e24f4343dfce1cac28d7cb5cb6535a84507: {'code': -32603, 'message': "Error: VM Exception while processing transaction: reverted with reason string 'insufficient funds.'", 'data': {'message': "Error: VM Exception while processing transaction: reverted with reason string 'insufficient funds.'", 'txHash': '0x6d14d159a92490581db58925d61a47fb8d9afa82ff15a9238efb46b2c54b17aa', 'data': '0x08c379a000000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000013696e73756666696369656e742066756e64732e00000000000000000000000000'}}
+2025-05-02 19:18:28,738 [INFO] server: block 21 mined
+2025-05-02 19:18:28,751 [ERROR] server: failed to close channel 3dd9d72a9250a1424c56b70b2c6f6e24f4343dfce1cac28d7cb5cb6535a84507: {'code': -32603, 'message': "Error: VM Exception while processing transaction: reverted with reason string 'insufficient funds.'", 'data': {'message': "Error: VM Exception while processing transaction: reverted with reason string 'insufficient funds.'", 'txHash': '0x202ae1d042f7ba142d7469cc7bd042f1e67925300f88eeaf3b8b3624edb55234', 'data': '0x08c379a000000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000013696e73756666696369656e742066756e64732e00000000000000000000000000'}}
+2025-05-02 19:18:30,258 [INFO] server: block 22 mined
+2025-05-02 19:18:30,271 [ERROR] server: failed to close channel 3dd9d72a9250a1424c56b70b2c6f6e24f4343dfce1cac28d7cb5cb6535a84507: {'code': -32603, 'message': "Error: VM Exception while processing transaction: reverted with reason string 'insufficient funds.'", 'data': {'message': "Error: VM Exception while processing transaction: reverted with reason string 'insufficient funds.'", 'txHash': '0xb81fe1f39797944e1dc14d2381a481afcd6fc21470e2557cf6e6093ee2d4a1f3', 'data': '0x08c379a000000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000013696e73756666696369656e742066756e64732e00000000000000000000000000'}}
+2025-05-02 19:18:31,777 [INFO] server: block 23 mined
+2025-05-02 19:18:31,792 [ERROR] server: failed to close channel 3dd9d72a9250a1424c56b70b2c6f6e24f4343dfce1cac28d7cb5cb6535a84507: {'code': -32603, 'message': "Error: VM Exception while processing transaction: reverted with reason string 'insufficient funds.'", 'data': {'message': "Error: VM Exception while processing transaction: reverted with reason string 'insufficient funds.'", 'txHash': '0x22f5fd70a5d7e5a48c3661a6f5548e698ca4b28a3721087c208bfacbcdce2dbb', 'data': '0x08c379a000000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000013696e73756666696369656e742066756e64732e00000000000000000000000000'}}
+2025-05-02 19:18:33,297 [INFO] server: block 24 mined
+2025-05-02 19:18:33,311 [ERROR] server: failed to close channel 3dd9d72a9250a1424c56b70b2c6f6e24f4343dfce1cac28d7cb5cb6535a84507: {'code': -32603, 'message': "Error: VM Exception while processing transaction: reverted with reason string 'insufficient funds.'", 'data': {'message': "Error: VM Exception while processing transaction: reverted with reason string 'insufficient funds.'", 'txHash': '0x8e12b70973ab6b81c37f25d771ab97df2b88954492e7e0224fbc23605a6f8535', 'data': '0x08c379a000000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000013696e73756666696369656e742066756e64732e00000000000000000000000000'}}
+2025-05-02 19:18:34,818 [INFO] server: block 25 mined
+2025-05-02 19:18:34,832 [ERROR] server: failed to close channel 3dd9d72a9250a1424c56b70b2c6f6e24f4343dfce1cac28d7cb5cb6535a84507: {'code': -32603, 'message': "Error: VM Exception while processing transaction: reverted with reason string 'insufficient funds.'", 'data': {'message': "Error: VM Exception while processing transaction: reverted with reason string 'insufficient funds.'", 'txHash': '0xf59ad518abbe740bc56783c8ae10777423a06f24aff3e590536dfb3fade171a1', 'data': '0x08c379a000000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000013696e73756666696369656e742066756e64732e00000000000000000000000000'}}
+2025-05-02 19:18:36,338 [INFO] server: block 26 mined
+2025-05-02 19:18:36,353 [ERROR] server: failed to close channel 3dd9d72a9250a1424c56b70b2c6f6e24f4343dfce1cac28d7cb5cb6535a84507: {'code': -32603, 'message': "Error: VM Exception while processing transaction: reverted with reason string 'insufficient funds.'", 'data': {'message': "Error: VM Exception while processing transaction: reverted with reason string 'insufficient funds.'", 'txHash': '0xa765b63a67b9045ac928bf8544e7d65536e39de552284a7860f7569b0119026f', 'data': '0x08c379a000000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000013696e73756666696369656e742066756e64732e00000000000000000000000000'}}
+2025-05-02 19:18:37,859 [INFO] server: block 27 mined
+2025-05-02 19:18:37,870 [ERROR] server: failed to close channel 3dd9d72a9250a1424c56b70b2c6f6e24f4343dfce1cac28d7cb5cb6535a84507: {'code': -32603, 'message': "Error: VM Exception while processing transaction: reverted with reason string 'insufficient funds.'", 'data': {'message': "Error: VM Exception while processing transaction: reverted with reason string 'insufficient funds.'", 'txHash': '0xe96271447cb88e495dea36ac4a1c63b8988e11c6e935ba76c5b7391c56299e23', 'data': '0x08c379a000000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000013696e73756666696369656e742066756e64732e00000000000000000000000000'}}
+2025-05-02 19:18:38,658 [INFO] websockets.server: server closing
+2025-05-02 19:18:38,660 [INFO] websockets.server: server closed
+2025-05-02 19:25:14,405 [INFO] websockets.server: server listening on 0.0.0.0:8765
+2025-05-02 19:25:17,691 [INFO] websockets.server: connection open
+2025-05-02 19:25:17,692 [INFO] server: identified 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266 with <websockets.asyncio.server.ServerConnection object at 0x104722120>
+2025-05-02 19:25:20,438 [INFO] websockets.server: connection open
+2025-05-02 19:25:20,438 [INFO] server: identified 0x70997970C51812dc3A010C7d01b50e0d17dc79C8 with <websockets.asyncio.server.ServerConnection object at 0x1045f5f90>
+2025-05-02 19:25:20,446 [INFO] server: channel created: 4a200652d33facef0143bcb311157a7f2fe022ceeb6ed4a25f9d92d6c4ea37ed between 0x70997970C51812dc3A010C7d01b50e0d17dc79C8 and 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+2025-05-02 19:25:21,545 [INFO] server: forwarded from 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266 to 0x70997970C51812dc3A010C7d01b50e0d17dc79C8
+2025-05-02 19:25:21,555 [INFO] server: forwarded from 0x70997970C51812dc3A010C7d01b50e0d17dc79C8 to 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+2025-05-02 19:25:21,934 [INFO] server: block 4 mined
+2025-05-02 19:25:41,556 [INFO] server: forwarded from 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266 to 0x70997970C51812dc3A010C7d01b50e0d17dc79C8
+2025-05-02 19:25:41,565 [INFO] server: forwarded from 0x70997970C51812dc3A010C7d01b50e0d17dc79C8 to 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+2025-05-02 19:25:43,046 [INFO] server: closing channel 0x70997970C51812dc3A010C7d01b50e0d17dc79C8 to 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+2025-05-02 19:25:43,052 [INFO] server: registered 4a200652d33facef0143bcb311157a7f2fe022ceeb6ed4a25f9d92d6c4ea37ed expiring at block 8
+2025-05-02 19:25:44,522 [INFO] server: block 6 mined
+2025-05-02 19:25:59,578 [INFO] server: block 9 mined
+2025-05-02 19:25:59,597 [INFO] server: channel 4a200652d33facef0143bcb311157a7f2fe022ceeb6ed4a25f9d92d6c4ea37ed closed successfully
+2025-05-02 19:26:01,104 [INFO] server: block 10 mined

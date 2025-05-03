@@ -14,7 +14,7 @@ class LandlordClient(Client):
     def __init__(self):
         super().__init__("landlord")
         self.active = asyncio.Event()
-        self.nonce = 0
+        self.nonce = 1
         self.invoice_task = None
         self.INVOICE_INTERVAL = 5
 
@@ -131,6 +131,7 @@ class LandlordClient(Client):
                 self.invoice_task = asyncio.create_task(self.invoice_loop())
             elif action == STOPRENTAL and self.active.is_set():
                 self.logger.info("stopping rental...")
+                await self.submit_invoice_to_contract()
                 self.channel = None
                 self.active.clear()
                 if self.invoice_task:
@@ -138,7 +139,7 @@ class LandlordClient(Client):
                     with contextlib.suppress(asyncio.CancelledError):
                         await self.invoice_task
                 await self.stop_container()
-                self.nonce = 0
+                self.nonce = 1
             elif action == SIGN:
                 self.logger.info(f"got signed invoice: {message[PAYLOAD]}")
                 self.invoices.append(message[PAYLOAD])

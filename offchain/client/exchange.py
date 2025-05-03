@@ -2,6 +2,7 @@ import argparse
 import asyncio
 import signal
 import sys
+import os
 from pathlib import Path
 
 sys.path.append(str(Path(__file__).resolve().parent))
@@ -20,9 +21,11 @@ def main():
     print("what the fuck please")
 
     if args.landlord: 
+        landlord_pk = "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266"
+        landlord_sk = "0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80"
+        os.environ["PUBLIC_KEY"]  = landlord_pk
+        os.environ["PRIVATE_KEY"] = landlord_sk
         client = LandlordClient()
-        client.public_key = "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266"
-        client.private_key = "0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80"
     elif args.renter:
         if not args.landlord_id:
             raise ValueError("You must specify --landlord-id when using -r")

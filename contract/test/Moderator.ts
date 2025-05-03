@@ -2,6 +2,16 @@ import { expect } from "chai";
 import { ethers } from "hardhat";
 import { time } from "@nomicfoundation/hardhat-network-helpers";
 
+const invoice = {
+    nonce: 1,
+    channel_id:
+        "112554834915606360840638919269075447075414307073622370445738349656695311434682",
+    sigL:
+        "0x44619c96799fda4e8e5afb07b5329afe56cc3fd3590540283178467af1ca1e565d9a5e5f19cecfdd02446fbbf970f19517ec5f2872d49403d608567faf3eac021b",
+    sigR:
+        "0x44619c96799fda4e8e5afb07b5329afe56cc3fd3590540283178467af1ca1e565d9a5e5f19cecfdd02446fbbf970f19517ec5f2872d49403d608567faf3eac021b"
+};
+
 describe("Moderator", function () {
     async function deployFixture() {
         const [renter, landlord, otherLandlord] = await ethers.getSigners();
@@ -96,7 +106,6 @@ describe("Moderator", function () {
         const renterAddr = "0xada6710E3951ee357825baBB84cE06300B13c073";
         const landlordAddr = "0x939d31bD382a5B0D536ff45E7d086321738867a2";
 
-        // set up mock channel
         await contract.setChannelForTest(channelId, renterAddr, landlordAddr); // helper required in contract
 
         const tx = await contract.submitInvoice(channelId, nonce, sigL, sigR);
@@ -111,6 +120,49 @@ describe("Moderator", function () {
         await expect(tx)
             .to.emit(contract, "InvoiceSubmitted")
             .withArgs(channelId, nonce, stored.expirationBlock);
+    });
+
+    describe("Moderator.verify() with supplied invoice", () => {
+        it("recovers the correct addresses and verifies both sigs", async () => {
+            const Moderator = await ethers.getContractFactory("Moderator");
+            const moderator = await Moderator.deploy();
+            await moderator.waitForDeployment();
+
+            const channelId = ethers.zeroPadValue(
+                ethers.toBeHex(invoice.channel_id),
+                32
+            );
+
+            const nonce = invoice.nonce;
+
+            const packedHash = ethers.solidityPackedKeccak256(
+                ["bytes32", "uint32"],
+                [channelId, nonce]
+            );
+            const ethHash = ethers.hashMessage(ethers.getBytes(packedHash));
+
+            const landlordAddr = ethers.recoverAddress(ethHash, invoice.sigL);
+            const renterAddr = ethers.recoverAddress(ethHash, invoice.sigR);
+
+            console.log(" landlordAddr:", landlordAddr);
+            console.log(" renterAddr  :", renterAddr);
+
+            const landlordOk = await moderator.verify(
+                channelId,
+                nonce,
+                invoice.sigL,
+                landlordAddr
+            );
+            const renterOk = await moderator.verify(
+                channelId,
+                nonce,
+                invoice.sigR,
+                renterAddr
+            );
+
+            expect(landlordOk).to.be.true;
+            expect(renterOk).to.be.true;
+        });
     });
 
     it("should reflect correct renter balance after deposit", async () => {

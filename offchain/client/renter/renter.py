@@ -58,6 +58,7 @@ class RenterClient(Client):
     
     async def stop(self):
         if self.websocket:
+            await self.submit_invoice_to_contract()
             await self.send_stop_rental()
             await self.websocket.close()
             self.logger.info("renter client shutdown complete!")
